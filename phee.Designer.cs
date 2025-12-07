@@ -1,6 +1,6 @@
 ﻿namespace khachsan
 {
-    partial class Form3
+    partial class phee
     {
         /// <summary>
         /// Required designer variable.
