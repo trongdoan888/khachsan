@@ -3,9 +3,9 @@ using khachsan.Model;
 using MongoDB.Driver;
 namespace khachsan
 {
-    public partial class Form1 : Form
+    public partial class giaodienchinh : Form
     {
-        public Form1()
+        public giaodienchinh()
         {
             InitializeComponent();
         }
@@ -35,9 +35,9 @@ namespace khachsan
             var db = DatabaseMain.GetDatabase();
             var usersCollection = db.GetCollection<UserDatabase>("users");
             var users = usersCollection.Find(_ => true).ToList();
-            if(users.Count > 0)
+            if (users.Count > 0)
             {
-                foreach(var user in users)
+                foreach (var user in users)
                 {
                     MessageBox.Show($"Mã NV: {user.maNV}, Tài khoản: {user.taiKhoan}, Mật khẩu: {user.matKhau}");
                 }
@@ -46,6 +46,11 @@ namespace khachsan
             {
                 MessageBox.Show("Không tìm thấy người dùng nào trong cơ sở dữ liệu.");
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

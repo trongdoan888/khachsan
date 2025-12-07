@@ -1,6 +1,6 @@
 ﻿namespace khachsan
 {
-    partial class Form1
+    partial class giaodienchinh
     {
         /// <summary>
         ///  Required designer variable.
@@ -81,39 +81,44 @@
             // 
             // button4
             // 
-            button4.Location = new Point(367, 17);
+            button4.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.Location = new Point(409, 3);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(122, 46);
             button4.TabIndex = 3;
-            button4.Text = "button4";
+            button4.Text = "Đăng xuất";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(258, 17);
+            button3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Location = new Point(284, 3);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(119, 46);
             button3.TabIndex = 2;
-            button3.Text = "button3";
+            button3.Text = "Thoát";
             button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(149, 17);
+            button2.Location = new Point(139, 3);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(139, 46);
             button2.TabIndex = 1;
-            button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += this.button2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(24, 17);
+            button1.BackColor = SystemColors.MenuBar;
+            button1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(3, 3);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(130, 47);
             button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "New Booking";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += this.button1_Click;
             // 
             // splitContainer2
             // 
@@ -143,82 +148,98 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(105, 36);
+            dateTimePicker1.Location = new Point(110, 30);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 2;
             // 
             // button6
             // 
-            button6.Location = new Point(311, 36);
+            button6.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button6.Location = new Point(316, 28);
             button6.Name = "button6";
-            button6.Size = new Size(36, 23);
+            button6.Size = new Size(36, 29);
             button6.TabIndex = 1;
-            button6.Text = "button6";
+            button6.Text = "Go";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += this.button6_Click;
             // 
             // button5
             // 
-            button5.Location = new Point(24, 36);
+            button5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.Location = new Point(12, 25);
             button5.Name = "button5";
-            button5.Size = new Size(75, 23);
+            button5.Size = new Size(75, 34);
             button5.TabIndex = 0;
-            button5.Text = "button5";
+            button5.Text = "Refresh";
             button5.UseVisualStyleBackColor = true;
             // 
             // button12
             // 
+            button12.BackColor = Color.Red;
+            button12.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button12.Location = new Point(539, 247);
             button12.Name = "button12";
             button12.Size = new Size(266, 152);
             button12.TabIndex = 5;
-            button12.Text = "button12";
-            button12.UseVisualStyleBackColor = true;
+            button12.Text = "203";
+            button12.UseVisualStyleBackColor = false;
             // 
             // button11
             // 
+            button11.BackColor = Color.Red;
+            button11.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button11.Location = new Point(275, 247);
             button11.Name = "button11";
             button11.Size = new Size(266, 152);
             button11.TabIndex = 4;
-            button11.Text = "button11";
-            button11.UseVisualStyleBackColor = true;
+            button11.Text = "202";
+            button11.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
+            button10.BackColor = Color.Red;
+            button10.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button10.Location = new Point(12, 247);
             button10.Name = "button10";
             button10.Size = new Size(266, 152);
             button10.TabIndex = 3;
-            button10.Text = "button10";
-            button10.UseVisualStyleBackColor = true;
+            button10.Text = "201";
+            button10.UseVisualStyleBackColor = false;
             // 
             // button9
             // 
+            button9.BackColor = Color.Red;
+            button9.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button9.Location = new Point(539, 44);
             button9.Name = "button9";
             button9.Size = new Size(266, 152);
             button9.TabIndex = 2;
-            button9.Text = "button9";
-            button9.UseVisualStyleBackColor = true;
+            button9.Text = "103";
+            button9.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
+            button8.BackColor = Color.Red;
+            button8.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button8.Location = new Point(275, 44);
             button8.Name = "button8";
             button8.Size = new Size(266, 152);
             button8.TabIndex = 1;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
+            button8.Text = "102";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
+            button7.BackColor = Color.Red;
+            button7.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.Location = new Point(12, 44);
             button7.Name = "button7";
             button7.Size = new Size(266, 152);
             button7.TabIndex = 0;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
+            button7.Text = "101";
+            button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
             // toolStripMenuItem1
@@ -231,16 +252,17 @@
             toolStripComboBox1.Name = "toolStripComboBox1";
             toolStripComboBox1.Size = new Size(121, 23);
             // 
-            // Form1
+            // giaodienchinh
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(810, 589);
             Controls.Add(splitContainer1);
-            Name = "Form1";
+            Name = "giaodienchinh";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += this.giaodienchinh_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
