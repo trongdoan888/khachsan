@@ -1,6 +1,6 @@
 ﻿namespace khachsan
 {
-    partial class Form4
+    partial class thembooking
     {
         /// <summary>
         /// Required designer variable.
