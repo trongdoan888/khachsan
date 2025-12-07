@@ -153,7 +153,7 @@
             dateTimePicker1.Font = new Font("Times New Roman", 10.875F);
             dateTimePicker1.Location = new Point(146, 190);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(400, 41);
+            dateTimePicker1.Size = new Size(416, 41);
             dateTimePicker1.TabIndex = 7;
             // 
             // dateTimePicker2
@@ -161,7 +161,7 @@
             dateTimePicker2.Font = new Font("Times New Roman", 10.875F);
             dateTimePicker2.Location = new Point(738, 188);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(400, 41);
+            dateTimePicker2.Size = new Size(426, 41);
             dateTimePicker2.TabIndex = 8;
             // 
             // label2
