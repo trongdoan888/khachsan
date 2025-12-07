@@ -34,6 +34,7 @@
             button2 = new Button();
             button1 = new Button();
             splitContainer2 = new SplitContainer();
+            dateTimePicker1 = new DateTimePicker();
             button6 = new Button();
             button5 = new Button();
             button12 = new Button();
@@ -44,7 +45,6 @@
             button7 = new Button();
             toolStripMenuItem1 = new ToolStripMenuItem();
             toolStripComboBox1 = new ToolStripComboBox();
-            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -141,6 +141,13 @@
             splitContainer2.TabIndex = 0;
             splitContainer2.SplitterMoved += splitContainer2_SplitterMoved;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(105, 36);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 2;
+            // 
             // button6
             // 
             button6.Location = new Point(311, 36);
@@ -212,6 +219,7 @@
             button7.TabIndex = 0;
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // toolStripMenuItem1
             // 
@@ -222,13 +230,6 @@
             // 
             toolStripComboBox1.Name = "toolStripComboBox1";
             toolStripComboBox1.Size = new Size(121, 23);
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(105, 36);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 2;
             // 
             // Form1
             // 

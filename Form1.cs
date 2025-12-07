@@ -1,3 +1,6 @@
+﻿using khachsan.Database;
+using khachsan.Model;
+using MongoDB.Driver;
 namespace khachsan
 {
     public partial class Form1 : Form
@@ -27,5 +30,22 @@ namespace khachsan
 
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var db = DatabaseMain.GetDatabase();
+            var usersCollection = db.GetCollection<UserDatabase>("users");
+            var users = usersCollection.Find(_ => true).ToList();
+            if(users.Count > 0)
+            {
+                foreach(var user in users)
+                {
+                    MessageBox.Show($"Mã NV: {user.maNV}, Tài khoản: {user.taiKhoan}, Mật khẩu: {user.matKhau}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy người dùng nào trong cơ sở dữ liệu.");
+            }
+        }
     }
 }
