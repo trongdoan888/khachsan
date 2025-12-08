@@ -23,17 +23,17 @@ namespace khachsan.Model
         public int soTreEm { get; set; }
         public double soDem { get; set; }
         public double giaPhong { get; set; }
-        public maGia maGia { get; set; }
-        public hinhThucThanhToan hinhThucThanhToan { get; set; }
+        public MaGia maGia { get; set; }
+        public HinhThucThanhToan hinhThucThanhToan { get; set; }
         public string ghiChu { get; set; }
-        public loaiBooking loaiBooking { get; set; }
-        public nguon nguon { get; set; }
-        public congty congty { get; set; }
+        public LoaiBooking loaiBooking { get; set; }
+        public Nguon nguon { get; set; }
+        public Congty congty { get; set; }
         public int soPhong { get; set; }
         public string datBoi { get; set; }
         public int soDienThoaiNguoiDat { get; set; }
         public string emailNguoiDat { get; set; }
-        public quocTich quocTich { get; set; }
+        public QuocTich quocTich { get; set; }
         public LoaiPhong loaiPhong { get; set; }
     }
 
@@ -51,7 +51,7 @@ namespace khachsan.Model
         Agent
     }
 
-    internal enum quocTich
+    internal enum QuocTich
     {
         VietNam,
         USA,
@@ -61,7 +61,7 @@ namespace khachsan.Model
         Other
     }
 
-    internal enum congty
+    internal enum Congty
     {
         None,
         CompanyA,
@@ -69,7 +69,7 @@ namespace khachsan.Model
         CompanyC
     }
 
-    internal enum nguon
+    internal enum Nguon
     {
         WalkIn,
         OnlineBooking,
@@ -77,14 +77,14 @@ namespace khachsan.Model
         Corporate
     }
 
-    internal enum loaiBooking
+    internal enum LoaiBooking
     {
         Individual,
         Group,
         Corporate
     }
 
-    internal enum hinhThucThanhToan
+    internal enum HinhThucThanhToan
     {
         Cash,
         CreditCard,
@@ -92,7 +92,7 @@ namespace khachsan.Model
         OnlinePayment
     }
 
-    internal enum maGia
+    internal enum MaGia
     {
         Standard,
         Deluxe,
