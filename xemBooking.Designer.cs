@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             label1 = new Label();
@@ -88,18 +87,6 @@
             button1.Text = "Guest Profile";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.ControlDark;
-            button2.Font = new Font("Times New Roman", 10.875F);
-            button2.Location = new Point(1045, 532);
-            button2.Margin = new Padding(2, 1, 2, 1);
-            button2.Name = "button2";
-            button2.Size = new Size(87, 34);
-            button2.TabIndex = 1;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -619,7 +606,6 @@
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
             Margin = new Padding(2, 1, 2, 1);
             Name = "xemBooking";
@@ -632,7 +618,6 @@
         #endregion
 
         private Button button1;
-        private Button button2;
         private Button button3;
         private Button button4;
         private Label label1;

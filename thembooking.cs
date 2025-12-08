@@ -91,7 +91,7 @@ namespace khachsan
             DateTime Ngayden = dateTimePicker1.Value;
             DateTime Ngaydi = dateTimePicker2.Value;
 
-            double sodem = (Ngaydi - Ngayden).TotalDays;
+            int sodem = (int)(Ngaydi - Ngayden).TotalDays;
 
             string Nguoilon = textBox3.Text.Trim().ToString();
 
@@ -141,6 +141,8 @@ namespace khachsan
                 int sophong = textBox13.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
 
                 string gioitinh = comboBox1.SelectedItem?.ToString();
+
+                string passport = textBox15.Text.Trim().ToString();
                 if (string.IsNullOrEmpty(gioitinh))
                 {
                     MessageBox.Show("Vui lòng chọn giới tính!");
@@ -199,15 +201,15 @@ namespace khachsan
                     MessageBox.Show("Vui lòng chọn loại phòng!");
                     return;
                 }
-         
-           
 
-            string quocgia = comboBox8.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(quocgia))
-            {
-                MessageBox.Show("Vui lòng chọn quốc tịch!");
-                return;
-            }
+
+
+                string quocgia = comboBox8.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(quocgia))
+                {
+                    MessageBox.Show("Vui lòng chọn quốc tịch!");
+                    return;
+                }
 
 
 
@@ -238,7 +240,8 @@ namespace khachsan
                     congty = congty,
                     datBoi = nguoidat,
                     soDienThoaiNguoiDat = sodienthoainguoidat,
-                    emailNguoiDat = emailnguoidat
+                    emailNguoiDat = emailnguoidat,
+                    passport = passport
                 };
                 newBookingCollection.InsertOne(newBX);
             }
@@ -293,6 +296,21 @@ namespace khachsan
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
         {
 
         }

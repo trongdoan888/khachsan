@@ -35,5 +35,6 @@ namespace khachsan.Model
         public string quocTich { get; set; }
         public string loaiPhong { get; set; }
         public int soluong { get; set; }
+        public string passport { get; set; }
     }
 }

@@ -77,6 +77,8 @@
             comboBox8 = new ComboBox();
             textBox10 = new TextBox();
             textBox14 = new TextBox();
+            textBox15 = new TextBox();
+            label23 = new Label();
             SuspendLayout();
             // 
             // textBox12
@@ -123,6 +125,7 @@
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(436, 182);
             textBox11.TabIndex = 85;
+            textBox11.TextChanged += textBox11_TextChanged;
             // 
             // label18
             // 
@@ -523,7 +526,7 @@
             // 
             button3.BackColor = SystemColors.ControlDark;
             button3.Font = new Font("Times New Roman", 10.875F);
-            button3.Location = new Point(994, 604);
+            button3.Location = new Point(1008, 543);
             button3.Margin = new Padding(2, 1, 2, 1);
             button3.Name = "button3";
             button3.Size = new Size(87, 34);
@@ -536,7 +539,7 @@
             // 
             button2.BackColor = SystemColors.ControlDark;
             button2.Font = new Font("Times New Roman", 10.875F);
-            button2.Location = new Point(1154, 604);
+            button2.Location = new Point(1167, 543);
             button2.Margin = new Padding(2, 1, 2, 1);
             button2.Name = "button2";
             button2.Size = new Size(87, 34);
@@ -619,11 +622,33 @@
             textBox14.Size = new Size(189, 24);
             textBox14.TabIndex = 95;
             // 
+            // textBox15
+            // 
+            textBox15.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox15.Location = new Point(108, 415);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(192, 25);
+            textBox15.TabIndex = 96;
+            textBox15.TextChanged += textBox15_TextChanged;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label23.Location = new Point(21, 417);
+            label23.Name = "label23";
+            label23.Size = new Size(65, 17);
+            label23.TabIndex = 97;
+            label23.Text = "Pass Port";
+            label23.Click += label23_Click;
+            // 
             // thembooking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1481, 677);
+            ClientSize = new Size(1312, 592);
+            Controls.Add(label23);
+            Controls.Add(textBox15);
             Controls.Add(textBox14);
             Controls.Add(textBox10);
             Controls.Add(comboBox8);
@@ -732,5 +757,7 @@
         private ComboBox comboBox8;
         private TextBox textBox10;
         private TextBox textBox14;
+        private TextBox textBox15;
+        private Label label23;
     }
 }
