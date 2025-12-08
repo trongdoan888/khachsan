@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace khachsan.Model
 {
-    internal class UserDatabase
+    internal class account
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
