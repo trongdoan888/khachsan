@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace khachsan
 {
-    public partial class CreateUser : Form
+    public partial class CreatUser : Form
     {
-        public CreateUser()
+        public CreatUser()
         {
             InitializeComponent();
+        }
+
+        private void lblpassagain_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
