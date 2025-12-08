@@ -71,6 +71,7 @@
             textBox12 = new TextBox();
             label21 = new Label();
             button5 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -78,10 +79,10 @@
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button1.BackColor = SystemColors.ControlDark;
             button1.Font = new Font("Times New Roman", 10.875F);
-            button1.Location = new Point(1926, 126);
+            button1.Location = new Point(2238, 146);
             button1.Margin = new Padding(4, 2, 4, 2);
             button1.Name = "button1";
-            button1.Size = new Size(46, 0);
+            button1.Size = new Size(172, 97);
             button1.TabIndex = 0;
             button1.Text = "Guest Profile";
             button1.UseVisualStyleBackColor = false;
@@ -98,19 +99,6 @@
             button3.TabIndex = 2;
             button3.Text = "OK";
             button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ControlDark;
-            button4.Font = new Font("Times New Roman", 10.875F);
-            button4.Location = new Point(1956, 130);
-            button4.Margin = new Padding(4, 2, 4, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(240, 73);
-            button4.TabIndex = 3;
-            button4.Text = "Guest Infomation";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
             // 
             // label1
             // 
@@ -551,21 +539,24 @@
             // 
             // button5
             // 
-            button5.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(888, 1065);
-            button5.Margin = new Padding(6);
+            button5.Location = new Point(0, 0);
             button5.Name = "button5";
-            button5.Size = new Size(396, 164);
-            button5.TabIndex = 44;
-            button5.Text = "XÁC NHẬN";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 0;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 0;
             // 
             // xemBooking
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2245, 1344);
+            ClientSize = new Size(2699, 1811);
+            Controls.Add(button2);
             Controls.Add(button5);
             Controls.Add(textBox12);
             Controls.Add(label21);
@@ -663,5 +654,6 @@
         private TextBox textBox12;
         private Label label21;
         private Button button5;
+        private Button button2;
     }
 }
