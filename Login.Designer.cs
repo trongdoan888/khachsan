@@ -111,7 +111,7 @@
             // 
             textBox1.BackColor = Color.Khaki;
             textBox1.Location = new Point(568, 508);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Enter your username";
@@ -123,7 +123,7 @@
             // 
             textBox2.BackColor = Color.Khaki;
             textBox2.Location = new Point(568, 552);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Margin = new Padding(2);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Enter your password";
@@ -137,12 +137,13 @@
             btnEnter.Font = new Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEnter.ForeColor = Color.DimGray;
             btnEnter.Location = new Point(475, 622);
-            btnEnter.Margin = new Padding(2, 2, 2, 2);
+            btnEnter.Margin = new Padding(2);
             btnEnter.Name = "btnEnter";
             btnEnter.Size = new Size(106, 31);
             btnEnter.TabIndex = 8;
             btnEnter.Text = "ENTER";
             btnEnter.UseVisualStyleBackColor = false;
+            btnEnter.Click += btnEnter_Click;
             // 
             // btnCancel
             // 
@@ -150,7 +151,7 @@
             btnCancel.Font = new Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.ForeColor = Color.DimGray;
             btnCancel.Location = new Point(657, 622);
-            btnCancel.Margin = new Padding(2, 2, 2, 2);
+            btnCancel.Margin = new Padding(2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(106, 31);
             btnCancel.TabIndex = 9;
@@ -173,8 +174,9 @@
             Controls.Add(lblaim);
             Controls.Add(lblname);
             Controls.Add(lbllogin);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LOGIN";
             Load += Login_Load;
             ResumeLayout(false);

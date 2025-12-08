@@ -63,6 +63,7 @@
             splitContainer1.Panel1.Controls.Add(button8);
             splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
@@ -110,6 +111,7 @@
             button9.TabIndex = 2;
             button9.Text = "Exit";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
@@ -191,6 +193,7 @@
             ClientSize = new Size(859, 461);
             Controls.Add(splitContainer1);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

@@ -1,4 +1,7 @@
-﻿using khachsan.Model;
+﻿using khachsan.Database;
+using khachsan.Model;
+using khachsan.Properties;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace khachsan
 {
@@ -35,7 +40,49 @@ namespace khachsan
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-     
+
         }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            string username = textBox1.Text.Trim().ToString();
+            string password = textBox2.Text.Trim().ToString();
+            try
+            {
+                var db = DatabaseMain.GetDatabase();
+                var Usercollection = db.GetCollection<account>("account");
+                var user = Usercollection.Find(acc => acc.taiKhoan == username && acc.matKhau == password).FirstOrDefault();
+                if (user == null) {
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu !!! ", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error); return;
+                }
+                else
+                {
+                    
+                    MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+
+                    try
+                    {
+
+                        this.Hide();
+                        Form2 main = new Form2();
+                        main.ShowDialog();
+                        this.Show();
+                    }
+                    catch
+                    {
+
+                    }
+                }
+
+
+            } catch
+            {
+
+            }
+        }
+        
+
     }
 }
