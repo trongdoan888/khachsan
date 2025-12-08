@@ -20,7 +20,7 @@ namespace khachsan.Model
         public DateTime ngayDi { get; set; }
         public int soNguoiLon { get; set; }
         public int soTreEm { get; set; }
-        public double soDem { get; set; }
+        public int soDem { get; set; }
         public double giaPhong { get; set; }
         public string maGia { get; set; }
         public string hinhThucThanhToan { get; set; }

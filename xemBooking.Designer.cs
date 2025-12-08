@@ -42,7 +42,7 @@
             label4 = new Label();
             label5 = new Label();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            tbAdults = new TextBox();
             textBox4 = new TextBox();
             label6 = new Label();
             label7 = new Label();
@@ -70,9 +70,9 @@
             textBox10 = new TextBox();
             textBox11 = new TextBox();
             label18 = new Label();
-            label20 = new Label();
             textBox12 = new TextBox();
             label21 = new Label();
+            button5 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -83,7 +83,7 @@
             button1.Location = new Point(1037, 59);
             button1.Margin = new Padding(2, 1, 2, 1);
             button1.Name = "button1";
-            button1.Size = new Size(0, 0);
+            button1.Size = new Size(25, 0);
             button1.TabIndex = 0;
             button1.Text = "Guest Profile";
             button1.UseVisualStyleBackColor = false;
@@ -139,6 +139,7 @@
             // 
             comboBox1.Font = new Font("Times New Roman", 10.875F);
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "SUP", "DLX", "EXE", "APT" });
             comboBox1.Location = new Point(313, 50);
             comboBox1.Margin = new Padding(2, 1, 2, 1);
             comboBox1.Name = "comboBox1";
@@ -152,6 +153,7 @@
             textBox1.Location = new Point(79, 50);
             textBox1.Margin = new Padding(2, 1, 2, 1);
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(110, 24);
             textBox1.TabIndex = 6;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -164,6 +166,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(226, 24);
             dateTimePicker1.TabIndex = 7;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // dateTimePicker2
             // 
@@ -173,6 +176,7 @@
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(231, 24);
             dateTimePicker2.TabIndex = 8;
+            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // label2
             // 
@@ -226,15 +230,17 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(56, 24);
             textBox2.TabIndex = 13;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
-            // textBox3
+            // tbAdults
             // 
-            textBox3.Font = new Font("Times New Roman", 10.875F);
-            textBox3.Location = new Point(289, 130);
-            textBox3.Margin = new Padding(2, 1, 2, 1);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(37, 24);
-            textBox3.TabIndex = 14;
+            tbAdults.Font = new Font("Times New Roman", 10.875F);
+            tbAdults.Location = new Point(289, 130);
+            tbAdults.Margin = new Padding(2, 1, 2, 1);
+            tbAdults.Name = "tbAdults";
+            tbAdults.Size = new Size(37, 24);
+            tbAdults.TabIndex = 14;
+            tbAdults.TextChanged += D_TextChanged;
             // 
             // textBox4
             // 
@@ -244,6 +250,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(37, 24);
             textBox4.TabIndex = 15;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // label6
             // 
@@ -287,6 +294,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(195, 24);
             textBox5.TabIndex = 18;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // label9
             // 
@@ -303,11 +311,13 @@
             // 
             comboBox2.Font = new Font("Times New Roman", 10.875F);
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "FO", "Sale", "Company" });
             comboBox2.Location = new Point(397, 177);
             comboBox2.Margin = new Padding(2, 1, 2, 1);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(132, 24);
             comboBox2.TabIndex = 19;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label10
             // 
@@ -324,11 +334,13 @@
             // 
             comboBox3.Font = new Font("Times New Roman", 10.875F);
             comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Bank", "Card", "Cash", "Công nợ" });
             comboBox3.Location = new Point(397, 213);
             comboBox3.Margin = new Padding(2, 1, 2, 1);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(132, 24);
             comboBox3.TabIndex = 21;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // textBox6
             // 
@@ -338,6 +350,7 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(451, 24);
             textBox6.TabIndex = 24;
+            textBox6.TextChanged += textBox6_TextChanged;
             // 
             // label11
             // 
@@ -366,11 +379,13 @@
             // 
             comboBox4.Font = new Font("Times New Roman", 10.875F);
             comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "FO", "Sale", "comporate", "Facebook" });
             comboBox4.Location = new Point(79, 345);
             comboBox4.Margin = new Padding(2, 1, 2, 1);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(132, 24);
             comboBox4.TabIndex = 27;
+            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
             // 
             // label13
             // 
@@ -387,11 +402,13 @@
             // 
             comboBox5.Font = new Font("Times New Roman", 10.875F);
             comboBox5.FormattingEnabled = true;
+            comboBox5.Items.AddRange(new object[] { "Walk-In", "Online", "Comporate", "Sale" });
             comboBox5.Location = new Point(79, 313);
             comboBox5.Margin = new Padding(2, 1, 2, 1);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(132, 24);
             comboBox5.TabIndex = 25;
+            comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
             // 
             // textBox7
             // 
@@ -401,6 +418,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(151, 24);
             textBox7.TabIndex = 30;
+            textBox7.TextChanged += textBox7_TextChanged;
             // 
             // label14
             // 
@@ -416,11 +434,12 @@
             // textBox8
             // 
             textBox8.Font = new Font("Times New Roman", 10.875F);
-            textBox8.Location = new Point(379, 342);
+            textBox8.Location = new Point(379, 345);
             textBox8.Margin = new Padding(2, 1, 2, 1);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(151, 24);
             textBox8.TabIndex = 32;
+            textBox8.TextChanged += textBox8_TextChanged;
             // 
             // label15
             // 
@@ -442,6 +461,7 @@
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(151, 24);
             textBox9.TabIndex = 34;
+            textBox9.TextChanged += textBox9_TextChanged;
             // 
             // label16
             // 
@@ -469,11 +489,13 @@
             // 
             comboBox6.Font = new Font("Times New Roman", 10.875F);
             comboBox6.FormattingEnabled = true;
+            comboBox6.Items.AddRange(new object[] { "Agoda", "Travelloca", "Trip" });
             comboBox6.Location = new Point(780, 48);
             comboBox6.Margin = new Padding(2, 1, 2, 1);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(218, 24);
             comboBox6.TabIndex = 35;
+            comboBox6.SelectedIndexChanged += comboBox6_SelectedIndexChanged;
             // 
             // label19
             // 
@@ -504,6 +526,7 @@
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(394, 182);
             textBox11.TabIndex = 40;
+            textBox11.TextChanged += textBox11_TextChanged;
             // 
             // label18
             // 
@@ -517,19 +540,6 @@
             label18.Text = "Comments";
             label18.Click += label18_Click;
             // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Times New Roman", 16.125F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label20.ForeColor = Color.Blue;
-            label20.Location = new Point(529, 426);
-            label20.Margin = new Padding(2, 0, 2, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(95, 25);
-            label20.TabIndex = 41;
-            label20.Text = "Res. No: ";
-            label20.Click += label20_Click;
-            // 
             // textBox12
             // 
             textBox12.Font = new Font("Times New Roman", 10.875F);
@@ -538,6 +548,7 @@
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(110, 24);
             textBox12.TabIndex = 43;
+            textBox12.TextChanged += textBox12_TextChanged;
             // 
             // label21
             // 
@@ -550,14 +561,24 @@
             label21.TabIndex = 42;
             label21.Text = "Status";
             // 
+            // button5
+            // 
+            button5.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.Location = new Point(478, 499);
+            button5.Name = "button5";
+            button5.Size = new Size(213, 77);
+            button5.TabIndex = 44;
+            button5.Text = "XÁC NHẬN";
+            button5.UseVisualStyleBackColor = true;
+            // 
             // xemBooking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 647);
+            ClientSize = new Size(1209, 630);
+            Controls.Add(button5);
             Controls.Add(textBox12);
             Controls.Add(label21);
-            Controls.Add(label20);
             Controls.Add(textBox11);
             Controls.Add(label18);
             Controls.Add(textBox10);
@@ -585,7 +606,7 @@
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(tbAdults);
             Controls.Add(textBox2);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -603,6 +624,7 @@
             Margin = new Padding(2, 1, 2, 1);
             Name = "xemBooking";
             Text = "Form3";
+            Load += xemBooking_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -623,7 +645,7 @@
         private Label label4;
         private Label label5;
         private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox tbAdults;
         private TextBox textBox4;
         private Label label6;
         private Label label7;
@@ -651,8 +673,8 @@
         private TextBox textBox10;
         private TextBox textBox11;
         private Label label18;
-        private Label label20;
         private TextBox textBox12;
         private Label label21;
+        private Button button5;
     }
 }

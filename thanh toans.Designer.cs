@@ -41,6 +41,7 @@
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
+            button12 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(button12);
             splitContainer1.Panel1.Controls.Add(dateTimePicker1);
             splitContainer1.Panel1.Controls.Add(button11);
             splitContainer1.Panel1.Controls.Add(button10);
@@ -106,7 +108,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(292, 12);
+            button9.Location = new Point(527, 3);
             button9.Name = "button9";
             button9.Size = new Size(123, 46);
             button9.TabIndex = 2;
@@ -116,7 +118,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(155, 12);
+            button8.Location = new Point(364, 3);
             button8.Name = "button8";
             button8.Size = new Size(123, 46);
             button8.TabIndex = 1;
@@ -126,7 +128,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(12, 12);
+            button1.Location = new Point(12, 3);
             button1.Name = "button1";
             button1.Size = new Size(123, 46);
             button1.TabIndex = 0;
@@ -194,6 +196,16 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button12
+            // 
+            button12.Location = new Point(164, 3);
+            button12.Name = "button12";
+            button12.Size = new Size(162, 46);
+            button12.TabIndex = 6;
+            button12.Text = "New Account";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -203,6 +215,7 @@
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
+            Load += Form2_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
@@ -225,5 +238,6 @@
         private Button button8;
         private Button button7;
         private Button button6;
+        private Button button12;
     }
 }

@@ -39,10 +39,6 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            textBox6 = new TextBox();
-            label7 = new Label();
             comboBox2 = new ComboBox();
             label8 = new Label();
             label9 = new Label();
@@ -54,6 +50,10 @@
             button3 = new Button();
             button2 = new Button();
             dateTimePicker2 = new DateTimePicker();
+            textBox5 = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
+            textBox6 = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -170,46 +170,6 @@
             label5.Text = "Birthday";
             label5.Click += label5_Click;
             // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Times New Roman", 10.875F);
-            textBox5.Location = new Point(99, 210);
-            textBox5.Margin = new Padding(2, 1, 2, 1);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(216, 24);
-            textBox5.TabIndex = 96;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 10.875F);
-            label6.Location = new Point(21, 210);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(59, 17);
-            label6.TabIndex = 95;
-            label6.Text = "Passport";
-            // 
-            // textBox6
-            // 
-            textBox6.Font = new Font("Times New Roman", 10.875F);
-            textBox6.Location = new Point(99, 242);
-            textBox6.Margin = new Padding(2, 1, 2, 1);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(216, 24);
-            textBox6.TabIndex = 98;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Times New Roman", 10.875F);
-            label7.Location = new Point(21, 242);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(34, 17);
-            label7.TabIndex = 97;
-            label7.Text = "Visa";
-            // 
             // comboBox2
             // 
             comboBox2.Font = new Font("Times New Roman", 10.875F);
@@ -325,6 +285,46 @@
             dateTimePicker2.TabIndex = 110;
             dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
             // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Times New Roman", 10.875F);
+            textBox5.Location = new Point(99, 210);
+            textBox5.Margin = new Padding(2, 1, 2, 1);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(216, 24);
+            textBox5.TabIndex = 96;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 10.875F);
+            label6.Location = new Point(21, 210);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 17);
+            label6.TabIndex = 95;
+            label6.Text = "Passport";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Times New Roman", 10.875F);
+            label7.Location = new Point(21, 242);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(34, 17);
+            label7.TabIndex = 97;
+            label7.Text = "Visa";
+            // 
+            // textBox6
+            // 
+            textBox6.Font = new Font("Times New Roman", 10.875F);
+            textBox6.Location = new Point(99, 242);
+            textBox6.Margin = new Padding(2, 1, 2, 1);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(216, 24);
+            textBox6.TabIndex = 98;
+            // 
             // thongtinkhach
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -376,10 +376,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox5;
-        private Label label6;
-        private TextBox textBox6;
-        private Label label7;
         private ComboBox comboBox2;
         private Label label8;
         private Label label9;
@@ -391,5 +387,9 @@
         private Button button3;
         private Button button2;
         private DateTimePicker dateTimePicker2;
+        private TextBox textBox5;
+        private Label label6;
+        private Label label7;
+        private TextBox textBox6;
     }
 }

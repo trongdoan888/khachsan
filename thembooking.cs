@@ -95,7 +95,7 @@ namespace khachsan
 
             DateTime Ngayden = dateTimePicker1.Value;
             DateTime Ngaydi = dateTimePicker2.Value;
-            double sodem = (Ngaydi - Ngayden).TotalDays;
+            int sodem = (int)(Ngaydi - Ngayden).TotalDays;
             string Nguoilon = textBox3.Text.Trim().ToString();
             string Treem = textBox4.Text.Trim().ToString();
 
@@ -246,6 +246,21 @@ namespace khachsan
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }

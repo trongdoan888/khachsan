@@ -76,6 +76,7 @@
             textBox13 = new TextBox();
             comboBox8 = new ComboBox();
             textBox10 = new TextBox();
+            textBox14 = new TextBox();
             SuspendLayout();
             // 
             // textBox12
@@ -178,6 +179,7 @@
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(163, 24);
             textBox9.TabIndex = 79;
+            textBox9.TextChanged += textBox9_TextChanged;
             // 
             // label16
             // 
@@ -316,7 +318,7 @@
             // 
             comboBox3.Font = new Font("Times New Roman", 10.875F);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Bank", "Card", "Cash", "Công nợ" });
+            comboBox3.Items.AddRange(new object[] { "Bank", "Card", "Cash" });
             comboBox3.Location = new Point(392, 382);
             comboBox3.Margin = new Padding(2, 1, 2, 1);
             comboBox3.Name = "comboBox3";
@@ -344,6 +346,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(195, 24);
             comboBox2.TabIndex = 64;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // textBox5
             // 
@@ -520,7 +523,7 @@
             // 
             button3.BackColor = SystemColors.ControlDark;
             button3.Font = new Font("Times New Roman", 10.875F);
-            button3.Location = new Point(886, 516);
+            button3.Location = new Point(994, 604);
             button3.Margin = new Padding(2, 1, 2, 1);
             button3.Name = "button3";
             button3.Size = new Size(87, 34);
@@ -533,7 +536,7 @@
             // 
             button2.BackColor = SystemColors.ControlDark;
             button2.Font = new Font("Times New Roman", 10.875F);
-            button2.Location = new Point(1034, 516);
+            button2.Location = new Point(1154, 604);
             button2.Margin = new Padding(2, 1, 2, 1);
             button2.Name = "button2";
             button2.Size = new Size(87, 34);
@@ -607,11 +610,21 @@
             textBox10.Size = new Size(200, 23);
             textBox10.TabIndex = 94;
             // 
+            // textBox14
+            // 
+            textBox14.Font = new Font("Times New Roman", 10.875F);
+            textBox14.Location = new Point(646, 326);
+            textBox14.Margin = new Padding(2, 1, 2, 1);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(189, 24);
+            textBox14.TabIndex = 95;
+            // 
             // thembooking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1481, 677);
+            Controls.Add(textBox14);
             Controls.Add(textBox10);
             Controls.Add(comboBox8);
             Controls.Add(textBox13);
@@ -718,5 +731,6 @@
         private TextBox textBox13;
         private ComboBox comboBox8;
         private TextBox textBox10;
+        private TextBox textBox14;
     }
 }

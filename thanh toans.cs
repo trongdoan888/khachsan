@@ -20,10 +20,12 @@ namespace khachsan
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string codePhong = "10001";
+            string nameRoom = button2.Text;
             try
             {
                 this.Hide();
-                xemBooking main = new xemBooking();
+                xemBooking main = new xemBooking(codePhong, nameRoom);
                 main.ShowDialog();
                 this.Show();
             }
@@ -82,10 +84,12 @@ namespace khachsan
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string codePhong = "10002";
+            string nameRoom = button3.Text;
             try
             {
                 this.Hide();
-                xemBooking main = new xemBooking();
+                xemBooking main = new xemBooking(codePhong, nameRoom);
                 main.ShowDialog();
                 this.Show();
             }
@@ -97,25 +101,30 @@ namespace khachsan
 
         private void button4_Click(object sender, EventArgs e)
         {
+            string codePhong = "10003";
+            string nameRoom = button4.Text;
             try
             {
                 this.Hide();
-                xemBooking main = new xemBooking();
+                xemBooking main = new xemBooking(codePhong, nameRoom);
                 main.ShowDialog();
                 this.Show();
             }
             catch
             {
 
+
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            string codePhong = "10004";
+            string nameRoom = button5.Text;
             try
             {
                 this.Hide();
-                xemBooking main = new xemBooking();
+                xemBooking main = new xemBooking(codePhong, nameRoom);
                 main.ShowDialog();
                 this.Show();
             }
@@ -127,35 +136,51 @@ namespace khachsan
 
         private void button6_Click(object sender, EventArgs e)
         {
+            string codePhong = "10005";
+            string nameRoom = button6.Text;
             try
             {
                 this.Hide();
-                xemBooking main = new xemBooking();
+                xemBooking main = new xemBooking(codePhong, nameRoom);
                 main.ShowDialog();
                 this.Show();
             }
             catch
             {
+
 
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            string codePhong = "10006";
+            string nameRoom = button7.Text;
             try
             {
                 this.Hide();
-                xemBooking main = new xemBooking();
+                xemBooking main = new xemBooking(codePhong, nameRoom);
                 main.ShowDialog();
                 this.Show();
             }
             catch
             {
 
+
             }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
         {
 
         }
