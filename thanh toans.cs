@@ -20,7 +20,17 @@ namespace khachsan
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.Hide();
+                xemBooking main = new xemBooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
 
+            }
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
