@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace khachsan
 {
-    public partial class Form5 : Form
+    public partial class Form1 : Form
     {
-        public Form5()
+        public Form1()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
