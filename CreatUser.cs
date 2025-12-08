@@ -33,6 +33,13 @@ namespace khachsan
             string matKhau = textBox3.Text.Trim().ToString();
             string passAgain = textBox4.Text.Trim().ToString();
 
+
+
+
+
+
+
+
             try
             {
                 var db = DatabaseMain.GetDatabase();
@@ -81,10 +88,15 @@ namespace khachsan
             {
                 MessageBox.Show("Lỗi khi thêm tài khoản vào database: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-             
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

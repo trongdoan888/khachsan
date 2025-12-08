@@ -92,7 +92,8 @@ namespace khachsan
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
     }
 }
