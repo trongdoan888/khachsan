@@ -182,11 +182,11 @@ namespace khachsan
 
         private void button12_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Hi
-            }
-            catch { }
+            //try
+            //{
+            //    this.Hi
+            //}
+            //catch { }
         }
     }
 }

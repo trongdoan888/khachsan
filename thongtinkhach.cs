@@ -16,7 +16,10 @@ namespace khachsan
         {
             InitializeComponent();
         }
+        private void thongtinkhach_Load(object sender, EventArgs e)
+        {
 
+        }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
@@ -28,6 +31,11 @@ namespace khachsan
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

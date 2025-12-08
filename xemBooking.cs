@@ -68,13 +68,6 @@ namespace khachsan
 
         private void xemBooking_Load(object sender, EventArgs e)
         {
-            //SUP
-            //DLX
-            //EXE
-            //APT
-            textBox1.Text = nameRoom;
-            textBox2.Text = namePrice;
-
             try
             {
                 var db = DatabaseMain.GetDatabase();
