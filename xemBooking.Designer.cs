@@ -104,7 +104,7 @@
             // 
             button3.BackColor = SystemColors.ControlDark;
             button3.Font = new Font("Times New Roman", 10.875F);
-            button3.Location = new Point(1666, 1135);
+            button3.Location = new Point(1676, 1135);
             button3.Name = "button3";
             button3.Size = new Size(162, 72);
             button3.TabIndex = 2;
