@@ -49,7 +49,7 @@
             textBox7 = new TextBox();
             label10 = new Label();
             label11 = new Label();
-            comboBox4 = new ComboBox();
+            comboBox3 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             button3 = new Button();
             button2 = new Button();
@@ -253,14 +253,14 @@
             label11.TabIndex = 106;
             label11.Text = "Comp/Agent";
             // 
-            // comboBox4
+            // comboBox3
             // 
-            comboBox4.Font = new Font("Times New Roman", 10.875F);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(1551, 218);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(510, 41);
-            comboBox4.TabIndex = 105;
+            comboBox3.Font = new Font("Times New Roman", 10.875F);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(1551, 218);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(510, 41);
+            comboBox3.TabIndex = 105;
             // 
             // dateTimePicker1
             // 
@@ -309,7 +309,7 @@
             Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(label11);
-            Controls.Add(comboBox4);
+            Controls.Add(comboBox3);
             Controls.Add(textBox7);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -359,7 +359,7 @@
         private TextBox textBox7;
         private Label label10;
         private Label label11;
-        private ComboBox comboBox4;
+        private ComboBox comboBox3;
         private DateTimePicker dateTimePicker1;
         private Button button3;
         private Button button2;
