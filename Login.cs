@@ -35,12 +35,7 @@ namespace khachsan
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            var username = textBox1.Text;
-            {
-                var db = Database.DatabaseMain.GetDatabase();
-                var collection = db.GetCollection<account>("users");
-                var user = collection.InsertOne(a => a.username == username).FirstOrDefault();
-            }
+     
         }
     }
 }
