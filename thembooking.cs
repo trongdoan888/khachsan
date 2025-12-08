@@ -86,80 +86,24 @@ namespace khachsan
         private void button3_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text.Trim().ToString();
-            string gioitinh = comboBox1.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(gioitinh))
-            {
-                MessageBox.Show("Vui lòng chọn giới tính!");
-                return;
-            }
+
 
             DateTime Ngayden = dateTimePicker1.Value;
             DateTime Ngaydi = dateTimePicker2.Value;
+
             double sodem = (Ngaydi - Ngayden).TotalDays;
+
             string Nguoilon = textBox3.Text.Trim().ToString();
+
             string Treem = textBox4.Text.Trim().ToString();
 
-            string typephong = comboBox5.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(typephong))
-            {
-                MessageBox.Show("Vui lòng chọn Loại phòng!");
-                return;
-            }
-            string nguon = comboBox4.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(nguon))
-            {
-                MessageBox.Show("Vui lòng chọn Nguồn khách!");
-                return;
-            }
-
-            string loaiphong = comboBox7.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(loaiphong))
-            {
-                MessageBox.Show("Vui lòng chọn Loại hình đặt phòng!");
-                return;
-            }
-
-            string magia = comboBox2.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(magia))
-            {
-                MessageBox.Show("Vui lòng chọn Mã giá!");
-                return;
-            }
-
             double gia = textBox5.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox5.Text.Trim().ToString()) : 0;
-            int soluongphong = textBox12.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
-            int sophong = textBox13.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
-            string phuogthucthanhtoan = comboBox3.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(phuogthucthanhtoan))
-            {
-                MessageBox.Show("Vui lòng chọn Phương thức thanh toán!");
-                return;
-            }
 
-            string quocgia = comboBox8.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(quocgia))
-            {
-                MessageBox.Show("Vui lòng chọn Quốc gia!");
-                return;
-            }
-
-            string congty = comboBox6.SelectedItem?.ToString();
-            if (string.IsNullOrEmpty(congty))
-            {
-                MessageBox.Show("Vui lòng chọn Công ty!");
-                return;
-            }
-
-            string ghichu = textBox11.Text.Trim().ToString();
-            string nguoidat = textBox7.Text.Trim().ToString();
-            string sodienthoainguoidat = textBox8.Text.Trim().ToString();
-            string emailnguoidat = textBox9.Text.Trim().ToString();
             string code = textBox6.Text.Trim().ToString();
-
             // kiểm tra xem biến code có rỗng không
             if (string.IsNullOrEmpty(code))
             {
-                MessageBox.Show("Vui lòng nhập Mã đặt phòng!");
+                MessageBox.Show("Vui lòng nhập mã đặt phòng!");
                 return;
             }
 
@@ -182,6 +126,94 @@ namespace khachsan
                     }
                     return;
                 }
+
+
+                string nguoidat = textBox7.Text.Trim().ToString();
+
+                string sodienthoainguoidat = textBox8.Text.Trim().ToString();
+
+                string emailnguoidat = textBox9.Text.Trim().ToString();
+
+                string ghichu = textBox11.Text.Trim().ToString();
+
+                int soluongphong = textBox12.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
+
+                int sophong = textBox13.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
+
+                string gioitinh = comboBox1.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(gioitinh))
+                {
+                    MessageBox.Show("Vui lòng chọn giới tính!");
+                    return;
+                }
+
+
+
+                string magia = comboBox2.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(magia))
+                {
+                    MessageBox.Show("Vui lòng chọn mã giá!");
+                    return;
+                }
+
+
+                string phuogthucthanhtoan = comboBox3.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(phuogthucthanhtoan))
+                {
+                    MessageBox.Show("Vui lòng chọn phương thức thanh toán!");
+                    return;
+                }
+
+
+                string nguon = comboBox4.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(nguon))
+                {
+                    MessageBox.Show("Vui lòng chọn nguồn khách!");
+                    return;
+                }
+
+
+
+
+                string typephong = comboBox5.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(typephong))
+                {
+                    MessageBox.Show("Vui lòng chọn hình thức đặt phòng!");
+                    return;
+                }
+
+
+
+                string congty = comboBox6.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(congty))
+                {
+                    MessageBox.Show("Vui lòng chọn công ty hoặc đại lý du lịch!");
+                    return;
+                }
+
+
+
+                string loaiphong = comboBox7.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(loaiphong))
+                {
+                    MessageBox.Show("Vui lòng chọn loại phòng!");
+                    return;
+                }
+         
+           
+
+            string quocgia = comboBox8.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(quocgia))
+            {
+                MessageBox.Show("Vui lòng chọn quốc tịch!");
+                return;
+            }
+
+
+
+
+
+
 
                 newBooking newBX = new newBooking()
                 {
