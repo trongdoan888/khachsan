@@ -82,7 +82,7 @@
             button1.Location = new Point(2238, 146);
             button1.Margin = new Padding(4, 2, 4, 2);
             button1.Name = "button1";
-            button1.Size = new Size(172, 97);
+            button1.Size = new Size(88, 0);
             button1.TabIndex = 0;
             button1.Text = "Guest Profile";
             button1.UseVisualStyleBackColor = false;
@@ -555,7 +555,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2699, 1811);
+            ClientSize = new Size(2615, 1384);
             Controls.Add(button2);
             Controls.Add(button5);
             Controls.Add(textBox12);
