@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label20 = new Label();
-            comboBox1 = new ComboBox();
             label4 = new Label();
             textBox1 = new TextBox();
             comboBox2 = new ComboBox();
@@ -42,6 +41,7 @@
             label5 = new Label();
             button3 = new Button();
             button2 = new Button();
+            textBox5 = new TextBox();
             SuspendLayout();
             // 
             // label20
@@ -54,14 +54,6 @@
             label20.Size = new Size(182, 49);
             label20.TabIndex = 87;
             label20.Text = "Res. No: ";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(41, 175);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(354, 40);
-            comboBox1.TabIndex = 88;
             // 
             // label4
             // 
@@ -177,11 +169,19 @@
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = false;
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(41, 163);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(297, 39);
+            textBox5.TabIndex = 101;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2316, 1261);
+            Controls.Add(textBox5);
             Controls.Add(button2);
             Controls.Add(button3);
             Controls.Add(label5);
@@ -194,7 +194,6 @@
             Controls.Add(label4);
             Controls.Add(textBox1);
             Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
             Controls.Add(label20);
             Name = "Form1";
             Text = "Form1";
@@ -205,7 +204,6 @@
         #endregion
 
         private Label label20;
-        private ComboBox comboBox1;
         private Label label4;
         private TextBox textBox1;
         private ComboBox comboBox2;
@@ -218,5 +216,6 @@
         private Label label5;
         private Button button3;
         private Button button2;
+        private TextBox textBox5;
     }
 }
