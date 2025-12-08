@@ -79,119 +79,267 @@ namespace khachsan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
+            string nameRoom = button1.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                thembooking main = new thembooking();
-                main.ShowDialog();
-                this.Show();
-            }
-            catch
-            {
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
 
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
+            string nameRoom = button8.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                Login main = new Login();
-                main.ShowDialog();
-                this.Show();
-            }
-            catch
-            {
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
 
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string codePhong = "10002";
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
             string nameRoom = button3.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                xemBooking main = new xemBooking(codePhong, nameRoom);
-                main.ShowDialog();
-                this.Show();
-            }
-            catch
-            {
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
 
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string codePhong = "10003";
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
             string nameRoom = button4.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                xemBooking main = new xemBooking(codePhong, nameRoom);
-                main.ShowDialog();
-                this.Show();
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
+
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
-
-
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string codePhong = "10004";
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
             string nameRoom = button5.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                xemBooking main = new xemBooking(codePhong, nameRoom);
-                main.ShowDialog();
-                this.Show();
-            }
-            catch
-            {
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
 
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string codePhong = "10005";
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
             string nameRoom = button6.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                xemBooking main = new xemBooking(codePhong, nameRoom);
-                main.ShowDialog();
-                this.Show();
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
+
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
-
-
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string codePhong = "10006";
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
             string nameRoom = button7.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                xemBooking main = new xemBooking(codePhong, nameRoom);
-                main.ShowDialog();
-                this.Show();
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
+
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
-
-
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
         }
 
