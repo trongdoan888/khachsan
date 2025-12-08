@@ -31,6 +31,11 @@ namespace khachsan
             InitializeComponent();
         }
 
+        public xemBooking(DateTime ngaytim, string nameRoom)
+        {
+            this.nameRoom = nameRoom;
+        }
+
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -98,6 +103,7 @@ namespace khachsan
                     textBox9.Text = BookingUser.emailNguoiDat; // email
                     textBox8.Text = BookingUser.soDienThoaiNguoiDat; // tel
                     textBox7.Text = BookingUser.datBoi; // by
+                    textBox1.Text = BookingUser.maPhong.ToString();
                     if (BookingUser.code != null)
                     {
                         textBox12.Text = "In House";
@@ -294,6 +300,11 @@ namespace khachsan
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }

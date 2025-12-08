@@ -87,6 +87,8 @@ namespace khachsan
         {
             string name = textBox1.Text.Trim().ToString();
 
+            int maPhong = textBox2.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox2.Text.Trim().ToString()) : 0;
+
 
             DateTime Ngayden = dateTimePicker1.Value;
             DateTime Ngaydi = dateTimePicker2.Value;
@@ -241,9 +243,13 @@ namespace khachsan
                     datBoi = nguoidat,
                     soDienThoaiNguoiDat = sodienthoainguoidat,
                     emailNguoiDat = emailnguoidat,
-                    passport = passport
+                    passport = passport,
+                    maPhong = maPhong
+
                 };
                 newBookingCollection.InsertOne(newBX);
+
+                MessageBox.Show("Thêm booking thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -311,6 +317,16 @@ namespace khachsan
         }
 
         private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
         {
 
         }

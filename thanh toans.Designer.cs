@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            button12 = new Button();
             dateTimePicker1 = new DateTimePicker();
             button11 = new Button();
             button10 = new Button();
@@ -41,7 +42,6 @@
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            button12 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -79,6 +79,16 @@
             splitContainer1.Size = new Size(859, 461);
             splitContainer1.SplitterDistance = 119;
             splitContainer1.TabIndex = 0;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(164, 3);
+            button12.Name = "button12";
+            button12.Size = new Size(162, 46);
+            button12.TabIndex = 6;
+            button12.Text = "New Account";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // dateTimePicker1
             // 
@@ -142,7 +152,7 @@
             button7.Name = "button7";
             button7.Size = new Size(275, 156);
             button7.TabIndex = 5;
-            button7.Text = "Room 203";
+            button7.Text = "203";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
@@ -152,7 +162,7 @@
             button6.Name = "button6";
             button6.Size = new Size(275, 156);
             button6.TabIndex = 4;
-            button6.Text = "Room 202";
+            button6.Text = "202";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
@@ -162,7 +172,7 @@
             button5.Name = "button5";
             button5.Size = new Size(275, 156);
             button5.TabIndex = 3;
-            button5.Text = "Room 201";
+            button5.Text = "201";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
@@ -172,7 +182,7 @@
             button4.Name = "button4";
             button4.Size = new Size(275, 156);
             button4.TabIndex = 2;
-            button4.Text = "Room 103";
+            button4.Text = "103";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -182,7 +192,7 @@
             button3.Name = "button3";
             button3.Size = new Size(275, 156);
             button3.TabIndex = 1;
-            button3.Text = "Room 102\r\n";
+            button3.Text = "102\r\n";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -192,19 +202,9 @@
             button2.Name = "button2";
             button2.Size = new Size(275, 156);
             button2.TabIndex = 0;
-            button2.Text = "Room 101";
+            button2.Text = "101";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
-            // button12
-            // 
-            button12.Location = new Point(164, 3);
-            button12.Name = "button12";
-            button12.Size = new Size(162, 46);
-            button12.TabIndex = 6;
-            button12.Text = "New Account";
-            button12.UseVisualStyleBackColor = true;
-            button12.Click += button12_Click;
             // 
             // Form2
             // 

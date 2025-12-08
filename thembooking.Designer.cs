@@ -76,7 +76,6 @@
             textBox13 = new TextBox();
             comboBox8 = new ComboBox();
             textBox10 = new TextBox();
-            textBox14 = new TextBox();
             textBox15 = new TextBox();
             label23 = new Label();
             SuspendLayout();
@@ -486,6 +485,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(243, 24);
             dateTimePicker1.TabIndex = 51;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // textBox1
             // 
@@ -612,15 +612,7 @@
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(200, 23);
             textBox10.TabIndex = 94;
-            // 
-            // textBox14
-            // 
-            textBox14.Font = new Font("Times New Roman", 10.875F);
-            textBox14.Location = new Point(646, 326);
-            textBox14.Margin = new Padding(2, 1, 2, 1);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(189, 24);
-            textBox14.TabIndex = 95;
+            textBox10.TextChanged += textBox10_TextChanged;
             // 
             // textBox15
             // 
@@ -649,7 +641,6 @@
             ClientSize = new Size(1312, 592);
             Controls.Add(label23);
             Controls.Add(textBox15);
-            Controls.Add(textBox14);
             Controls.Add(textBox10);
             Controls.Add(comboBox8);
             Controls.Add(textBox13);
@@ -756,7 +747,6 @@
         private TextBox textBox13;
         private ComboBox comboBox8;
         private TextBox textBox10;
-        private TextBox textBox14;
         private TextBox textBox15;
         private Label label23;
     }

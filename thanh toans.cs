@@ -1,4 +1,8 @@
-﻿using System;
+﻿using khachsan.Database;
+using khachsan.Model;
+using MongoDB.Driver;
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MongoDB.Driver;
 
 namespace khachsan
 {
@@ -20,21 +23,43 @@ namespace khachsan
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string codePhong = "10001";
+            // Lấy ngày và tên phòng từ giao diện
+            DateTime Ngaytim = dateTimePicker1.Value.Date; // chỉ lấy phần Date
             string nameRoom = button2.Text;
+            int nameroom = int.Parse(nameRoom);
+            // mã phòng
+            MessageBox.Show("Tìm booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
             try
             {
-                this.Hide();
-                xemBooking main = new xemBooking(codePhong, nameRoom);
-                main.ShowDialog();
-                this.Show();
+                var db = DatabaseMain.GetDatabase();
+                var bookingCollection = db.GetCollection<newBooking>("newBooking");
+                var allBookings = bookingCollection.Find(u => true).ToList();
+                int count = allBookings.Count;
+
+                for (int i = 0; i < count; i++)
+                {
+                    if (allBookings[i].maPhong == nameroom && allBookings[i].ngayDen.Date == Ngaytim)
+                    {
+                        string coden = allBookings[i].code;
+                        this.Hide();
+                        xemBooking main = new xemBooking(coden, nameRoom);
+                        main.ShowDialog();
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy booking nào cho phòng này và ngày đã chọn!");
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Lỗi khi tìm booking: " + ex.Message);
             }
-        }
 
+        }
+       
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -182,11 +207,17 @@ namespace khachsan
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    this.Hi
-            //}
-            //catch { }
+            try
+            {
+                this.Hide();
+                thembooking main = new thembooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

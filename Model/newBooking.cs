@@ -13,9 +13,10 @@ namespace khachsan.Model
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        public required string code { get; set; }
+        public int maPhong { get; set; }
+        public string code { get; set; }
         public string gioiTinh { get; set; }
-        public required string tenKhach { get; set; }
+        public string tenKhach { get; set; }
         public DateTime ngayDen { get; set; }
         public DateTime ngayDi { get; set; }
         public int soNguoiLon { get; set; }
@@ -24,7 +25,7 @@ namespace khachsan.Model
         public double giaPhong { get; set; }
         public string maGia { get; set; }
         public string hinhThucThanhToan { get; set; }
-        public required string ghiChu { get; set; }
+        public  string ghiChu { get; set; }
         public string loaiBooking { get; set; }
         public string nguon { get; set; }
         public string congty { get; set; }

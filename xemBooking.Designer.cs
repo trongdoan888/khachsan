@@ -30,7 +30,6 @@
         {
             button1 = new Button();
             button3 = new Button();
-            button4 = new Button();
             label1 = new Label();
             comboBox1 = new ComboBox();
             textBox1 = new TextBox();
@@ -98,18 +97,6 @@
             button3.TabIndex = 2;
             button3.Text = "OK";
             button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ControlDark;
-            button4.Font = new Font("Times New Roman", 10.875F);
-            button4.Location = new Point(19, 532);
-            button4.Margin = new Padding(2, 1, 2, 1);
-            button4.Name = "button4";
-            button4.Size = new Size(87, 34);
-            button4.TabIndex = 3;
-            button4.Text = "Delete";
-            button4.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -557,6 +544,7 @@
             button5.TabIndex = 44;
             button5.Text = "XÁC NHẬN";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // xemBooking
             // 
@@ -604,7 +592,6 @@
             Controls.Add(textBox1);
             Controls.Add(comboBox1);
             Controls.Add(label1);
-            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button1);
             Margin = new Padding(2, 1, 2, 1);
