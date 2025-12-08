@@ -163,7 +163,6 @@
             Controls.Add(lblaim);
             Controls.Add(lblname);
             Controls.Add(lbllogin);
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login";
             Text = "LOGIN";
             Load += Login_Load;
