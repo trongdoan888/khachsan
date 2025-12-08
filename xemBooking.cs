@@ -87,9 +87,9 @@ namespace khachsan
         }
 
         // --- HÀM XỬ LÝ NÚT MỞ FORM THÔNG TIN KHÁCH  ---
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-           
+
             try
             {
                 // Gọi Form thongtinkhach và truyền mã code Booking qua Constructor
@@ -205,7 +205,7 @@ namespace khachsan
         private void label15_Click(object sender, EventArgs e) { }
         private void label20_Click(object sender, EventArgs e) { }
         private void label18_Click(object sender, EventArgs e) { }
-       
+
         private void textBox1_TextChanged(object sender, EventArgs e) { }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e) { }
@@ -226,5 +226,12 @@ namespace khachsan
         private void textBox6_TextChanged(object sender, EventArgs e) { }
         private void textBox12_TextChanged(object sender, EventArgs e) { }
         private void textBox11_TextChanged(object sender, EventArgs e) { }
+
+
+
+
+
     }
-}
+    
+    }
+

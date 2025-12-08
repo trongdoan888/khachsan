@@ -73,6 +73,7 @@
             // 
             comboBox1.Font = new Font("Times New Roman", 10.875F);
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Việt Nam", "Lào", "Bỉ" });
             comboBox1.Location = new Point(184, 241);
             comboBox1.Margin = new Padding(4, 2, 4, 2);
             comboBox1.Name = "comboBox1";
@@ -136,11 +137,13 @@
             // 
             comboBox2.Font = new Font("Times New Roman", 10.875F);
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Nam ", "Nữ" });
             comboBox2.Location = new Point(1281, 85);
             comboBox2.Margin = new Padding(4, 2, 4, 2);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(123, 41);
             comboBox2.TabIndex = 99;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label8
             // 
@@ -189,11 +192,13 @@
             // 
             comboBox3.Font = new Font("Times New Roman", 10.875F);
             comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Agoda", "Traveloka", "Trip" });
             comboBox3.Location = new Point(1339, 218);
             comboBox3.Margin = new Padding(4, 2, 4, 2);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(509, 41);
             comboBox3.TabIndex = 105;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // button3
             // 

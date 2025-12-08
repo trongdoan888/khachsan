@@ -19,14 +19,10 @@ namespace khachsan
         private string _codeBooking; // Biến lưu trữ mã Booking được truyền vào
 
         // Các biến private khác của bạn (Giữ nguyên)
-        private string ten;
-        private string email;
+
         private string qt;
-        private string hochieu;
-        private string note;
         private string gt;
-        private string sdt;
-        private string Comp { get; set; }
+        private string Comp;
 
         // Constructor mới nhận mã code
         public thongtinkhach(string code)
@@ -43,33 +39,31 @@ namespace khachsan
 
         private void thongtinkhach_Load(object sender, EventArgs e)
         {
-            // Kiểm tra nếu không có mã code, không cần truy vấn
-           
+
+
             try
             {
                 var db = DatabaseMain.GetDatabase();
                 var Bookingcollection = db.GetCollection<newBooking>("newBooking");
 
-                // Sử dụng _codeBooking để truy vấn
+
                 var BookingUser = Bookingcollection.Find(u => u.code == _codeBooking).FirstOrDefault();
 
                 if (BookingUser != null)
                 {
-                    // 1. Gán giá trị vào TextBox
+
                     textBox1.Text = BookingUser.tenKhach;        // Name
                     textBox3.Text = BookingUser.emailNguoiDat;   // Email
                     textBox5.Text = BookingUser.passport;        // Passport
                     textBox11.Text = BookingUser.ghiChu;         // Comments
-                    textBox7.Text = BookingUser.soDienThoaiNguoiDat; // Phone/Fax (Giả định là textBox7)
+                    textBox7.Text = BookingUser.soDienThoaiNguoiDat;
 
-                    // 2. Gán giá trị cho ComboBox (Sử dụng các hàm GetIndex)
-                    // Cần đảm bảo rằng các items trong comboBox1 (Quốc tịch) và comboBox3 (Công ty)
-                    // được sắp xếp theo thứ tự tương ứng với các hàm GetIndex.
+                    comboBox2.SelectedIndex = GetGT(BookingUser.gioiTinh); // Giới tính
+
+
                     comboBox1.SelectedIndex = GetQuocTichIndex(BookingUser.quocTich);
                     comboBox3.SelectedIndex = GetCompAgentIndex(BookingUser.congty);
 
-                    // Bạn có thể thêm logic cho comboBox Title (Giới tính) nếu có
-                    // comboBoxTitle.SelectedIndex = GetGioiTinhIndex(BookingUser.gioiTinh);
                 }
                 else
                 {
@@ -82,34 +76,47 @@ namespace khachsan
             }
         }
 
-        // --- CÁC HÀM HỖ TRỢ CHUYỂN ĐỔI STRING SANG INDEX CHO COMBOBOX ---
 
-        // Dựa trên logic của GetSource/GetPyType trong xemBooking.cs, bạn cần các hàm này 
-        // để ánh xạ chuỗi (string) sang index (int) của ComboBox.
 
-        private int GetQuocTichIndex(string quocTich) // comboBox1
+
+
+
+
+
+
+        private int GetGT(string gt) 
         {
-            // Vui lòng điền đúng thứ tự items trong comboBox1 ở Form Designer
-            switch (quocTich)
+
+            switch (gt)
+            {
+                case "Nam": return 0;
+                case "Nữ": return 1;
+                default: return -1;
+            }
+        }
+        private int GetQuocTichIndex(string qt) 
+        {
+
+            switch (qt)
             {
                 case "Việt Nam": return 0;
-                case "Mỹ": return 1;
-                case "Hàn Quốc": return 2;
-                // ... Thêm các quốc gia khác ...
+                case "Lào": return 1;
+                case "Bỉ": return 2;
                 default: return -1;
             }
         }
 
-        private int GetCompAgentIndex(string compName) // comboBox3
+        private int GetCompAgentIndex(string Comp) 
         {
-            // Vui lòng điền đúng thứ tự items trong comboBox3 ở Form Designer
-            switch (compName)
+
+            switch (Comp)
             {
                 case "Agoda": return 0;
-                case "Travelloca": return 1;
+                case "Traveloka": return 1;
                 case "Trip": return 2;
-                // ... Thêm các công ty/đại lý khác ...
-                default: return -1;
+
+                default:
+                    return -1;
             }
         }
 
@@ -188,6 +195,16 @@ namespace khachsan
 
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

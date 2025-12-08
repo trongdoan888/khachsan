@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             button3 = new Button();
             label1 = new Label();
             comboBox1 = new ComboBox();
@@ -72,21 +71,8 @@
             label21 = new Label();
             button5 = new Button();
             button2 = new Button();
+            button1 = new Button();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button1.BackColor = SystemColors.ControlDark;
-            button1.Font = new Font("Times New Roman", 10.875F);
-            button1.Location = new Point(2238, 146);
-            button1.Margin = new Padding(4, 2, 4, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(88, 0);
-            button1.TabIndex = 0;
-            button1.Text = "Guest Profile";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -551,11 +537,22 @@
             button2.Size = new Size(75, 23);
             button2.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.Location = new Point(2047, 182);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 46);
+            button1.TabIndex = 44;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
             // xemBooking
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2615, 1384);
+            ClientSize = new Size(2475, 1198);
+            Controls.Add(button1);
             Controls.Add(button2);
             Controls.Add(button5);
             Controls.Add(textBox12);
@@ -599,7 +596,6 @@
             Controls.Add(comboBox1);
             Controls.Add(label1);
             Controls.Add(button3);
-            Controls.Add(button1);
             Margin = new Padding(4, 2, 4, 2);
             Name = "xemBooking";
             Text = "Form3";
@@ -609,8 +605,6 @@
         }
 
         #endregion
-
-        private Button button1;
         private Button button3;
         private Button button4;
         private Label label1;
@@ -655,5 +649,6 @@
         private Label label21;
         private Button button5;
         private Button button2;
+        private Button button1;
     }
 }
