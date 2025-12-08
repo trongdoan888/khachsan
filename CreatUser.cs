@@ -33,6 +33,43 @@ namespace khachsan
             string matKhau = textBox3.Text.Trim().ToString();
             string passAgain = textBox4.Text.Trim().ToString();
 
+
+            // 1. Kiểm tra không được bỏ trống
+            if (string.IsNullOrEmpty(mnv) ||
+                string.IsNullOrEmpty(taiKhoan) ||
+                string.IsNullOrEmpty(matKhau) ||
+                string.IsNullOrEmpty(passAgain))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ tất cả các thông tin!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 3. Kiểm tra tài khoản không có ký tự đặc biệt
+            // Chỉ cho phép chữ + số
+            if (!taiKhoan.All(char.IsLetterOrDigit))
+            {
+                MessageBox.Show("Tài khoản không được chứa ký tự đặc biệt!",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 4. Kiểm tra độ dài mật khẩu
+            if (matKhau.Length < 6)
+            {
+                MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự!",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 5. Kiểm tra 2 mật khẩu có trùng nhau không
+            if (matKhau != passAgain)
+            {
+                MessageBox.Show("Mật khẩu nhập lại không khớp!",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 var db = DatabaseMain.GetDatabase();
@@ -87,6 +124,19 @@ namespace khachsan
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
         }
 
         private void CreatUser_Load(object sender, EventArgs e)
