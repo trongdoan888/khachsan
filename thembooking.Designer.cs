@@ -75,6 +75,7 @@
             button4 = new Button();
             textBox13 = new TextBox();
             comboBox8 = new ComboBox();
+            textBox10 = new TextBox();
             SuspendLayout();
             // 
             // textBox12
@@ -535,11 +536,19 @@
             comboBox8.Size = new Size(534, 41);
             comboBox8.TabIndex = 93;
             // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(1120, 38);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(200, 39);
+            textBox10.TabIndex = 94;
+            // 
             // thembooking
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2119, 1207);
+            Controls.Add(textBox10);
             Controls.Add(comboBox8);
             Controls.Add(textBox13);
             Controls.Add(button4);
@@ -643,5 +652,6 @@
         private Button button4;
         private TextBox textBox13;
         private ComboBox comboBox8;
+        private TextBox textBox10;
     }
 }
