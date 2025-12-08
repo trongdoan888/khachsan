@@ -52,12 +52,13 @@ namespace khachsan
                 var db = DatabaseMain.GetDatabase();
                 var Usercollection = db.GetCollection<account>("account");
                 var user = Usercollection.Find(acc => acc.taiKhoan == username && acc.matKhau == password).FirstOrDefault();
-                if (user == null) {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu !!! ", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error); return;
+                if (user == null)
+                {
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu !!! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
                 }
                 else
                 {
-                    
+
                     MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBox1.Text = "";
                     textBox2.Text = "";
@@ -77,12 +78,16 @@ namespace khachsan
                 }
 
 
-            } catch
+            }
+            catch
             {
 
             }
         }
-        
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
