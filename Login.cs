@@ -47,6 +47,15 @@ namespace khachsan
         {
             string username = textBox1.Text.Trim().ToString();
             string password = textBox2.Text.Trim().ToString();
+
+            // Kiểm tra rỗng
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 var db = DatabaseMain.GetDatabase();
