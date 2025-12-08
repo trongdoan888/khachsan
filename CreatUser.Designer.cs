@@ -193,6 +193,7 @@
             Margin = new Padding(2);
             Name = "CreatUser";
             Text = "CREATE USER";
+            Load += CreatUser_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -25,13 +25,6 @@ namespace khachsan.Model
         public double soTienDaTra { get; set; }
         public double soTienConLai { get; set; }
         public double giamGia { get; set; }
-        public TKT TaiKoanThu { get; set; }
-    }
-    internal enum TKT
-    {
-        TienMat,
-        TheTinDung,
-        ChuyenKhoan,
-        ViDienTu
+        public string TaiKoanThu { get; set; }
     }
 }

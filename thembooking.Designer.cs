@@ -162,6 +162,7 @@
             // 
             comboBox6.Font = new Font("Times New Roman", 10.875F);
             comboBox6.FormattingEnabled = true;
+            comboBox6.Items.AddRange(new object[] { "Agoda", "Travelloca", "Trip" });
             comboBox6.Location = new Point(716, 47);
             comboBox6.Margin = new Padding(2, 1, 2, 1);
             comboBox6.Name = "comboBox6";
@@ -246,6 +247,7 @@
             // 
             comboBox4.Font = new Font("Times New Roman", 10.875F);
             comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "FO", "Sale", "comporate", "Facebook" });
             comboBox4.Location = new Point(94, 272);
             comboBox4.Margin = new Padding(2, 1, 2, 1);
             comboBox4.Name = "comboBox4";
@@ -268,11 +270,13 @@
             // 
             comboBox5.Font = new Font("Times New Roman", 10.875F);
             comboBox5.FormattingEnabled = true;
+            comboBox5.Items.AddRange(new object[] { "Walk-In", "Online", "Comporate", "Sale" });
             comboBox5.Location = new Point(94, 240);
             comboBox5.Margin = new Padding(2, 1, 2, 1);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(190, 24);
             comboBox5.TabIndex = 70;
+            comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
             // 
             // textBox6
             // 
@@ -312,6 +316,7 @@
             // 
             comboBox3.Font = new Font("Times New Roman", 10.875F);
             comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Bank", "Card", "Cash", "Công nợ" });
             comboBox3.Location = new Point(392, 382);
             comboBox3.Margin = new Padding(2, 1, 2, 1);
             comboBox3.Name = "comboBox3";
@@ -333,6 +338,7 @@
             // 
             comboBox2.Font = new Font("Times New Roman", 10.875F);
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "FO", "Sale", "Company" });
             comboBox2.Location = new Point(108, 343);
             comboBox2.Margin = new Padding(2, 1, 2, 1);
             comboBox2.Name = "comboBox2";
@@ -408,6 +414,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(56, 24);
             textBox2.TabIndex = 57;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label5
             // 
@@ -488,11 +495,14 @@
             // 
             comboBox1.Font = new Font("Times New Roman", 10.875F);
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Nam", "Nữ" });
             comboBox1.Location = new Point(83, 90);
             comboBox1.Margin = new Padding(2, 1, 2, 1);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(52, 24);
+            comboBox1.Size = new Size(70, 24);
             comboBox1.TabIndex = 49;
+            comboBox1.Tag = "";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -547,6 +557,7 @@
             // 
             comboBox7.Font = new Font("Times New Roman", 10.875F);
             comboBox7.FormattingEnabled = true;
+            comboBox7.Items.AddRange(new object[] { "SUP", "DLX", "EXE", "APT" });
             comboBox7.Location = new Point(108, 305);
             comboBox7.Margin = new Padding(2, 1, 2, 1);
             comboBox7.Name = "comboBox7";
@@ -581,24 +592,26 @@
             // 
             comboBox8.Font = new Font("Times New Roman", 10.875F);
             comboBox8.FormattingEnabled = true;
+            comboBox8.Items.AddRange(new object[] { "Việt Nam ", "Trung Quốc ", "USA", "Nhật" });
             comboBox8.Location = new Point(454, 88);
             comboBox8.Margin = new Padding(2, 1, 2, 1);
             comboBox8.Name = "comboBox8";
             comboBox8.Size = new Size(289, 24);
             comboBox8.TabIndex = 93;
+            comboBox8.SelectedIndexChanged += comboBox8_SelectedIndexChanged;
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(1120, 38);
+            textBox10.Location = new Point(610, 13);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(200, 39);
+            textBox10.Size = new Size(200, 23);
             textBox10.TabIndex = 94;
             // 
             // thembooking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2119, 1207);
+            ClientSize = new Size(1481, 677);
             Controls.Add(textBox10);
             Controls.Add(comboBox8);
             Controls.Add(textBox13);

@@ -84,6 +84,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(293, 32);
             dateTimePicker1.TabIndex = 5;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // button11
             // 
@@ -121,6 +122,7 @@
             button8.TabIndex = 1;
             button8.Text = "Log out";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button1
             // 
@@ -130,6 +132,7 @@
             button1.TabIndex = 0;
             button1.Text = "New ";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button7
             // 
@@ -139,6 +142,7 @@
             button7.TabIndex = 5;
             button7.Text = "Room 203";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -148,6 +152,7 @@
             button6.TabIndex = 4;
             button6.Text = "Room 202";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -157,6 +162,7 @@
             button5.TabIndex = 3;
             button5.Text = "Room 201";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -166,6 +172,7 @@
             button4.TabIndex = 2;
             button4.Text = "Room 103";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -175,6 +182,7 @@
             button3.TabIndex = 1;
             button3.Text = "Room 102\r\n";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 

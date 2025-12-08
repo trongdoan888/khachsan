@@ -81,10 +81,15 @@ namespace khachsan
             {
                 MessageBox.Show("Lỗi khi thêm tài khoản vào database: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-             
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreatUser_Load(object sender, EventArgs e)
         {
 
         }

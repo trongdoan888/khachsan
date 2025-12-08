@@ -49,5 +49,115 @@ namespace khachsan
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                thembooking main = new thembooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                Login main = new Login();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                xemBooking main = new xemBooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                xemBooking main = new xemBooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                xemBooking main = new xemBooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                xemBooking main = new xemBooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                xemBooking main = new xemBooking();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
