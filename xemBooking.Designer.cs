@@ -73,7 +73,6 @@
             label20 = new Label();
             textBox12 = new TextBox();
             label21 = new Label();
-            textBox13 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -505,20 +504,11 @@
             label21.TabIndex = 42;
             label21.Text = "Status";
             // 
-            // textBox13
-            // 
-            textBox13.Font = new Font("Times New Roman", 10.875F);
-            textBox13.Location = new Point(1150, 917);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(200, 41);
-            textBox13.TabIndex = 44;
-            // 
             // xemBooking
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2151, 1238);
-            Controls.Add(textBox13);
             Controls.Add(textBox12);
             Controls.Add(label21);
             Controls.Add(label20);
@@ -617,6 +607,5 @@
         private Label label20;
         private TextBox textBox12;
         private Label label21;
-        private TextBox textBox13;
     }
 }
