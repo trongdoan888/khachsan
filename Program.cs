@@ -12,7 +12,7 @@ namespace khachsan
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new xemBooking());
+            Application.Run(new thembooking());
 
         }
     }

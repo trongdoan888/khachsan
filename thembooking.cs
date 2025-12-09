@@ -90,8 +90,16 @@ namespace khachsan
             string maPhong = textBox10.Text.Trim().ToString();
 
 
-            DateTime Ngayden = dateTimePicker1.Value.Date;
-            DateTime Ngaydi = dateTimePicker2.Value.Date;
+            DateTime Ngayden = dateTimePicker1.Value;
+
+            DateTime Ngaydi = dateTimePicker2.Value;
+
+            double check =  (int)(Ngaydi - Ngayden).TotalDays;
+            if (Ngayden >= Ngaydi && check != 0)
+            {
+                MessageBox.Show("Ngày đi phải lớn hơn ngày đến!", "Lỗi ngày tháng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             int sodem = (int)(Ngaydi - Ngayden).TotalDays;
 
@@ -318,6 +326,11 @@ namespace khachsan
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
         }
