@@ -574,27 +574,11 @@
             // 
             // button4
             // 
-            button4.BackColor = SystemColors.ControlDark;
-            button4.Font = new Font("Times New Roman", 10.875F);
-            button4.Location = new Point(474, 336);
-            button4.Margin = new Padding(2, 1, 2, 1);
-            button4.Name = "button4";
-            button4.Size = new Size(78, 30);
-            button4.TabIndex = 91;
-            button4.Text = "Assign";
-            button4.UseVisualStyleBackColor = false;
+
             // 
             // textBox13
             // 
-            textBox13.Font = new Font("Times New Roman", 10.875F);
-            textBox13.Location = new Point(555, 336);
-            textBox13.Margin = new Padding(2, 1, 2, 1);
-            textBox13.Multiline = true;
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(49, 30);
-            textBox13.TabIndex = 92;
-            textBox13.TextChanged += textBox13_TextChanged;
-            // 
+
             // comboBox8
             // 
             comboBox8.Font = new Font("Times New Roman", 10.875F);

@@ -226,7 +226,6 @@ namespace khachsan
                     ghiChu = ghichu,
                     loaiBooking = typephong,
                     soluong = soluongphong,
-                   
                     nguon = nguon,
                     loaiPhong = loaiphong,
                     maGia = magia,

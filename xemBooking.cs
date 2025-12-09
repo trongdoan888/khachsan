@@ -90,16 +90,16 @@ namespace khachsan
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            try
-            {
-                // Gọi Form thongtinkhach và truyền mã code Booking qua Constructor
-                thongtinkhach frmKhach = new thongtinkhach(codeBooking);
-                frmKhach.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi mở Form Thông tin Khách: " + ex.Message, "Lỗi");
-            }
+            //try
+            //{
+            //    // Gọi Form thongtinkhach và truyền mã code Booking qua Constructor
+            //    thongtinkhach frmKhach = new thongtinkhach(codeBooking);
+            //    frmKhach.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi khi mở Form Thông tin Khách: " + ex.Message, "Lỗi");
+            //}
         }
 
         // --- CÁC HÀM GET INDEX (GIỮ NGUYÊN) ---
@@ -227,11 +227,11 @@ namespace khachsan
         private void textBox12_TextChanged(object sender, EventArgs e) { }
         private void textBox11_TextChanged(object sender, EventArgs e) { }
 
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
-    
-    }
+
+}
 
