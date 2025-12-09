@@ -87,11 +87,11 @@ namespace khachsan
         {
             string name = textBox1.Text.Trim().ToString();
 
-            int maPhong = textBox2.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox2.Text.Trim().ToString()) : 0;
+            string maPhong = textBox10.Text.Trim().ToString();
 
 
-            DateTime Ngayden = dateTimePicker1.Value;
-            DateTime Ngaydi = dateTimePicker2.Value;
+            DateTime Ngayden = dateTimePicker1.Value.Date;
+            DateTime Ngaydi = dateTimePicker2.Value.Date;
 
             int sodem = (int)(Ngaydi - Ngayden).TotalDays;
 
@@ -139,8 +139,6 @@ namespace khachsan
                 string ghichu = textBox11.Text.Trim().ToString();
 
                 int soluongphong = textBox12.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
-
-                int sophong = textBox13.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
 
                 string gioitinh = comboBox1.SelectedItem?.ToString();
 
@@ -213,12 +211,6 @@ namespace khachsan
                     return;
                 }
 
-
-
-
-
-
-
                 newBooking newBX = new newBooking()
                 {
                     code = code,
@@ -234,7 +226,7 @@ namespace khachsan
                     ghiChu = ghichu,
                     loaiBooking = typephong,
                     soluong = soluongphong,
-                    soPhong = sophong,
+                   
                     nguon = nguon,
                     loaiPhong = loaiphong,
                     maGia = magia,

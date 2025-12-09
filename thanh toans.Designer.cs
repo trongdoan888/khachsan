@@ -31,9 +31,6 @@
             splitContainer1 = new SplitContainer();
             button12 = new Button();
             dateTimePicker1 = new DateTimePicker();
-            button11 = new Button();
-            button10 = new Button();
-            button9 = new Button();
             button8 = new Button();
             button1 = new Button();
             button7 = new Button();
@@ -59,9 +56,6 @@
             // 
             splitContainer1.Panel1.Controls.Add(button12);
             splitContainer1.Panel1.Controls.Add(dateTimePicker1);
-            splitContainer1.Panel1.Controls.Add(button11);
-            splitContainer1.Panel1.Controls.Add(button10);
-            splitContainer1.Panel1.Controls.Add(button9);
             splitContainer1.Panel1.Controls.Add(button8);
             splitContainer1.Panel1.Controls.Add(button1);
             splitContainer1.Panel1.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -82,7 +76,7 @@
             // 
             // button12
             // 
-            button12.Location = new Point(164, 3);
+            button12.Location = new Point(226, 3);
             button12.Name = "button12";
             button12.Size = new Size(162, 46);
             button12.TabIndex = 6;
@@ -92,43 +86,17 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(164, 69);
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(12, 67);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(293, 32);
+            dateTimePicker1.Size = new Size(223, 32);
             dateTimePicker1.TabIndex = 5;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
-            // button11
-            // 
-            button11.Location = new Point(479, 64);
-            button11.Name = "button11";
-            button11.Size = new Size(53, 46);
-            button11.TabIndex = 4;
-            button11.Text = "Go";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            button10.Location = new Point(12, 64);
-            button10.Name = "button10";
-            button10.Size = new Size(123, 46);
-            button10.TabIndex = 3;
-            button10.Text = "Refesh";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(527, 3);
-            button9.Name = "button9";
-            button9.Size = new Size(123, 46);
-            button9.TabIndex = 2;
-            button9.Text = "Exit";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
-            // 
             // button8
             // 
-            button8.Location = new Point(364, 3);
+            button8.Location = new Point(410, 3);
             button8.Name = "button8";
             button8.Size = new Size(123, 46);
             button8.TabIndex = 1;
@@ -140,9 +108,9 @@
             // 
             button1.Location = new Point(12, 3);
             button1.Name = "button1";
-            button1.Size = new Size(123, 46);
+            button1.Size = new Size(183, 46);
             button1.TabIndex = 0;
-            button1.Text = "New ";
+            button1.Text = "New Booking";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -198,7 +166,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(3, 3);
+            button2.Location = new Point(0, 3);
             button2.Name = "button2";
             button2.Size = new Size(275, 156);
             button2.TabIndex = 0;
@@ -232,9 +200,6 @@
         private Button button3;
         private Button button2;
         private DateTimePicker dateTimePicker1;
-        private Button button11;
-        private Button button10;
-        private Button button9;
         private Button button8;
         private Button button7;
         private Button button6;

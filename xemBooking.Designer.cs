@@ -134,21 +134,26 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             dateTimePicker1.Font = new Font("Times New Roman", 10.875F);
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(79, 89);
             dateTimePicker1.Margin = new Padding(2, 1, 2, 1);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(226, 24);
+            dateTimePicker1.Size = new Size(157, 24);
             dateTimePicker1.TabIndex = 7;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // dateTimePicker2
             // 
+            dateTimePicker2.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             dateTimePicker2.Font = new Font("Times New Roman", 10.875F);
-            dateTimePicker2.Location = new Point(397, 88);
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new Point(331, 92);
             dateTimePicker2.Margin = new Padding(2, 1, 2, 1);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(231, 24);
+            dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.Size = new Size(160, 24);
             dateTimePicker2.TabIndex = 8;
             dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
             // 
@@ -167,7 +172,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 10.875F);
-            label3.Location = new Point(325, 92);
+            label3.Location = new Point(258, 92);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(68, 17);
@@ -452,7 +457,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Times New Roman", 10.875F);
-            label17.Location = new Point(677, 50);
+            label17.Location = new Point(810, 47);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
             label17.Size = new Size(83, 17);
@@ -464,7 +469,7 @@
             comboBox6.Font = new Font("Times New Roman", 10.875F);
             comboBox6.FormattingEnabled = true;
             comboBox6.Items.AddRange(new object[] { "Agoda", "Travelloca", "Trip" });
-            comboBox6.Location = new Point(780, 48);
+            comboBox6.Location = new Point(924, 44);
             comboBox6.Margin = new Padding(2, 1, 2, 1);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(218, 24);
@@ -475,7 +480,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Times New Roman", 10.875F);
-            label19.Location = new Point(677, 88);
+            label19.Location = new Point(842, 89);
             label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
             label19.Size = new Size(42, 17);
@@ -485,7 +490,7 @@
             // textBox10
             // 
             textBox10.Font = new Font("Times New Roman", 10.875F);
-            textBox10.Location = new Point(780, 87);
+            textBox10.Location = new Point(924, 89);
             textBox10.Margin = new Padding(2, 1, 2, 1);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(218, 24);
