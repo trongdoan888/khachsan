@@ -12,7 +12,9 @@ namespace khachsan.Model
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         public string code { get; set; }
+        public string maPhong { get; set; }
         public double thanhTien { get; set; }
         public double soTienDaTra { get; set; }
         public double soTienConLai { get; set; }

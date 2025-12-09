@@ -1,5 +1,6 @@
 ﻿using khachsan.Database;
 using khachsan.Model;
+using MongoDB.Bson.IO;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,20 @@ namespace khachsan
     public partial class Form1 : Form
     {
         private string codeBooking;
+        private float TotalMoney;
+        private float TienCoc;
+        private string nameKhach;
         private string nameRoom;
-        public Form1(string code, string name)
+        public Form1(string maphong, float totalMoney, float coc, string datboi,string code)
         {
             codeBooking = code;
-            nameRoom = name;
+            TotalMoney = totalMoney;
+            TienCoc = coc;
+            nameKhach = datboi;
+            nameRoom = maphong;
             InitializeComponent();
         }
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -33,20 +40,27 @@ namespace khachsan
             try
             {
                 var db = DatabaseMain.GetDatabase();
-                var Bookingcollection = db.GetCollection<newBooking>("newBooking");
-                var PayUser = Bookingcollection.Find(u => u.code == codeBooking).FirstOrDefault();
-
+                var Paymentcollection = db.GetCollection<Payment>("Payment");
+                var PayUser = Paymentcollection.Find(u => u.code == codeBooking).FirstOrDefault();
                 if (PayUser != null)
                 {
-                    int dem = PayUser.soDem;
-                    double giaphong = PayUser.giaPhong;
-                    double gia = dem * giaphong;
-
-                    textBox1.Text = gia.ToString();
-                    textBox5.Text = PayUser.maPhong.ToString();
-                    //textBox2.Text = 
-
-
+               
+                    comboBox1.SelectedIndex = 1;
+              
+                    textBox6.Text = PayUser.tenNguoiTra;
+                    textBox5.Text = PayUser.maPhong;
+                    textBox1.Text = PayUser.thanhTien.ToString();
+                    textBox2.Text = PayUser.soTienDaTra.ToString();
+                    textBox3.Text = PayUser.soTienConLai.ToString();
+                }
+                else
+                {
+                    comboBox1.SelectedIndex = 0;
+                    textBox1.Text = TotalMoney.ToString();
+                    textBox2.Text = TienCoc.ToString();
+                    textBox3.Text = (TotalMoney - TienCoc).ToString();
+                    textBox5.Text = nameRoom;
+                    textBox6.Text = nameKhach;
 
                 }
             }
@@ -54,7 +68,48 @@ namespace khachsan
             {
 
             }
+         
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double uptotal = textBox1.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox1.Text.Trim().ToString()) : 0;
+            double upcoc = textBox2.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox2.Text.Trim().ToString()) : 0;
+            string upname = textBox6.Text.Trim().ToString();
+            try
+            {   
+                var db = DatabaseMain.GetDatabase();
+                var Paymentcollection = db.GetCollection<Payment>("Payment");
+                var filter = Builders<Payment>.Filter.Eq(p => p.code, codeBooking);
+
+                var update = Builders<Payment>.Update
+                    .Set(p => p.thanhTien, uptotal)
+                    .Set(p => p.soTienDaTra, upcoc)
+                    .Set(p => p.soTienConLai, TotalMoney - TienCoc)
+                    .Set(p => p.tenNguoiTra, upname);
+
+                var result = Paymentcollection.UpdateOne(
+                    filter,
+                    update,
+                    new UpdateOptions { IsUpsert = true } // insert nếu chưa có
+                );
+
+                if (result.MatchedCount > 0)
+                {
+                    MessageBox.Show("Cập nhật thanh toán thành công!");
+                }
+                else if (result.UpsertedId != null)
+                {
+                    MessageBox.Show("Bản ghi mới đã được tạo!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật Payment: " + ex.Message);
+            }
+        }
+
+       
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -89,7 +144,13 @@ namespace khachsan
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

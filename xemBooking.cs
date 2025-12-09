@@ -4,6 +4,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -26,7 +27,7 @@ namespace khachsan
         private string nameSource;
         private string namepay;
         private string namect;
-
+        private newBooking BookingGlobal;
         // Constructor nhận mã code
         public xemBooking(string code, string name)
         {
@@ -53,6 +54,7 @@ namespace khachsan
 
                 if (BookingUser != null)
                 {
+                    BookingGlobal = BookingUser;
                     comboBox1.SelectedIndex = GetRoomType(BookingUser.loaiPhong); // room type
                     comboBox2.SelectedIndex = GetPriceType(BookingUser.maGia);// rate code
                     comboBox6.SelectedIndex = GetAppType(BookingUser.congty); // congty
@@ -238,10 +240,16 @@ namespace khachsan
 
         private void button6_Click_1(object sender, EventArgs e)
         {
+            string maphong = BookingGlobal.maPhong;
+            TimeSpan songay = BookingGlobal.ngayDi - BookingGlobal.ngayDen;
+            float TotalMoney = (float)(Math.Ceiling(songay.TotalDays) * BookingGlobal.giaPhong);
+            float coc = (float)BookingGlobal.coc;
+            string namekhach = BookingGlobal.datBoi;
+            string code = BookingGlobal.code;
             try
             {
                 this.Hide();
-                Form1 main = new Form1();
+                Form1 main = new Form1(maphong, TotalMoney, coc, namekhach,code);
                 main.ShowDialog();
                 this.Show();
             }
@@ -353,6 +361,11 @@ namespace khachsan
             //        MessageBox.Show("Lỗi khi sửa booking: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -74,6 +74,8 @@
             button6 = new Button();
             textBox3 = new TextBox();
             label20 = new Label();
+            textBox13 = new TextBox();
+            label22 = new Label();
             SuspendLayout();
             // 
             // button3
@@ -588,11 +590,32 @@
             label20.Text = "Detosite";
             label20.Click += label20_Click_1;
             // 
+            // textBox13
+            // 
+            textBox13.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox13.Location = new Point(832, 227);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(211, 25);
+            textBox13.TabIndex = 114;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(717, 235);
+            label22.Name = "label22";
+            label22.Size = new Size(98, 17);
+            label22.TabIndex = 115;
+            label22.Text = "Payment status";
+            label22.Click += label22_Click;
+            // 
             // xemBooking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1187, 591);
+            Controls.Add(label22);
+            Controls.Add(textBox13);
             Controls.Add(label20);
             Controls.Add(textBox3);
             Controls.Add(button6);
@@ -694,5 +717,7 @@
         private Button button6;
         private TextBox textBox3;
         private Label label20;
+        private TextBox textBox13;
+        private Label label22;
     }
 }
