@@ -120,6 +120,7 @@
             textBox2.Location = new Point(811, 884);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.PlaceholderText = "Enter your password";
             textBox2.Size = new Size(464, 51);
             textBox2.TabIndex = 7;
