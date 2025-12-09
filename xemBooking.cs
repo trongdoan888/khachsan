@@ -41,9 +41,6 @@ namespace khachsan
             InitializeComponent();
         }
 
-
-        // --- CÁC HÀM XỬ LÝ SỰ KIỆN KHÁC (GIỮ NGUYÊN) ---
-
         private void xemBooking_Load(object sender, EventArgs e)
         {
             try
@@ -71,6 +68,7 @@ namespace khachsan
                     textBox5.Text = BookingUser.giaPhong.ToString(); // rate
                     textBox6.Text = BookingUser.code; // code
                     textBox11.Text = BookingUser.ghiChu; // comment
+                    textBox10.Text = BookingUser.tenKhach;
                     textBox9.Text = BookingUser.emailNguoiDat; // email
                     textBox8.Text = BookingUser.soDienThoaiNguoiDat; // tel
                     textBox7.Text = BookingUser.datBoi; // by
@@ -93,21 +91,28 @@ namespace khachsan
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e) // xem thong tin khach
         {
-
+            string name = BookingGlobal.datBoi;
+            string email = BookingGlobal.emailNguoiDat;
+            string passport = BookingGlobal.passport;
+            string sdt = BookingGlobal.soDienThoaiNguoiDat;
+            string ghichu = BookingGlobal.ghiChu;
+            string code = BookingGlobal.code;
+            string quoctichIndex = comboBox1.SelectedIndex.ToString();
+            string gioitinhIndex = comboBox2.SelectedIndex.ToString();
+            string congtyIndex = comboBox3.SelectedIndex.ToString();
             try
             {
                 this.Hide();
-                thongtinkhach main = new thongtinkhach();
+                thongtinkhach main = new thongtinkhach(name, email, passport, sdt, code, ghichu,gioitinhIndex,congtyIndex,quoctichIndex);
                 main.ShowDialog();
                 this.Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi mở thông tin khách: " + ex.Message, "Lỗi");
+                MessageBox.Show("Lỗi khi mở thanh toán: " + ex.Message, "Lỗi");
             }
-
 
         }
         private int GetRoomType(string nameRoom) // room type
@@ -244,12 +249,12 @@ namespace khachsan
             TimeSpan songay = BookingGlobal.ngayDi - BookingGlobal.ngayDen;
             float TotalMoney = (float)(Math.Ceiling(songay.TotalDays) * BookingGlobal.giaPhong);
             float coc = (float)BookingGlobal.coc;
-            string namekhach = BookingGlobal.datBoi;
+            string namekhach = BookingGlobal.tenKhach;
             string code = BookingGlobal.code;
             try
             {
                 this.Hide();
-                Form1 main = new Form1(maphong, TotalMoney, coc, namekhach,code);
+                Form1 main = new Form1(maphong, TotalMoney, coc, namekhach, code);
                 main.ShowDialog();
                 this.Show();
             }
@@ -275,92 +280,74 @@ namespace khachsan
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //    string code = textBox6.Text.Trim().ToString();
-            //    DateTime Ngayden = dateTimePicker1.Value;
-            //    DateTime Ngaydi = dateTimePicker2.Value;
-
-            //    string Nguoilon = tbAdults.Text.Trim().ToString();
-            //    string Treem = textBox4.Text.Trim().ToString();
-
-
-            //    double check = (int)(Ngaydi - Ngayden).TotalDays;
-            //    if (Ngayden >= Ngaydi && check != 0)
-            //    {
-            //        MessageBox.Show("Ngày đi phải lớn hơn ngày đến!", "Lỗi ngày tháng", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return;
-            //    }
-
-            //    int sodem = (int)(Ngaydi - Ngayden).TotalDays;
-
-            //    double coc = textBox3.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox13.Text.Trim().ToString()) : 0;
-
-            //    double gia = textBox5.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox5.Text.Trim().ToString()) : 0;
-            //    string nguoidat = textBox7.Text.Trim().ToString();
-            //    string emailnguoidat = textBox9.Text.Trim().ToString();
-            //    string ghichu = textBox11.Text.Trim().ToString();
-            //    string sodienthoainguoidat = textBox8.Text.Trim().ToString();
+            string uproom = textBox1.Text;
+            double upodem = textBox2.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox2.Text.Trim().ToString()) : 0;
+            double upadult = tbAdults.Text.Trim().ToString() != "" ? Convert.ToDouble(tbAdults.Text.Trim().ToString()) : 0;
+            double uptreem = textBox4.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox4.Text.Trim().ToString()) : 0;
+            string upprice = textBox5.Text;
+            string upcode = textBox6.Text;
+            string upby = textBox7.Text;
+            string uptel = textBox8.Text;
+            string upemail = textBox9.Text;
+            string upname = textBox10.Text;
+            double upcoc = textBox3.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox3.Text.Trim().ToString()) : 0;
+            string upghichu = textBox11.Text;
+            DateTime upNde = dateTimePicker1.Value;
+            DateTime upNdi = dateTimePicker2.Value;
+            string uploaiphong = comboBox1.SelectedItem?.ToString();
+            string upmagia = comboBox2.SelectedIndex.ToString();
+            string upptth = comboBox3.SelectedItem?.ToString();
+            string upnguon = comboBox4.SelectedItem?.ToString();
+            string uploaiBooking = comboBox5.SelectedItem?.ToString();
+            string upcongty = comboBox6.SelectedItem?.ToString();
 
 
-            //    //string phuogthucthanhtoan = comboBox3.SelectedItem?.ToString();
-            //    //if (string.IsNullOrEmpty(phuogthucthanhtoan))
-            //    //{
-            //    //    MessageBox.Show("Vui lòng chọn phương thức thanh toán!");
-            //    //    return;
-            //    //}
+            try
+            {
+                var db = DatabaseMain.GetDatabase();
+                var Paymentcollection = db.GetCollection<newBooking>("newBooking");
+                var filter = Builders<newBooking>.Filter.Eq(p => p.code, codeBooking);
 
-            //    string nguon = comboBox4.SelectedItem?.ToString();
-            //    if (string.IsNullOrEmpty(nguon))
-            //    {
-            //        MessageBox.Show("Vui lòng chọn nguồn khách!");
-            //        return;
-            //    }
+                var update = Builders<newBooking>.Update
+                    .Set(p => p.maPhong, uproom)
+                    .Set(p => p.soDem, upodem)
+                    .Set(p => p.soNguoiLon, upadult)
+                    .Set(p => p.soTreEm, uptreem)
+                    .Set(p => p.giaPhong, Convert.ToDouble(upprice))
+                    .Set(p => p.datBoi, upby)
+                    .Set(p => p.soDienThoaiNguoiDat, uptel)
+                    .Set(p => p.emailNguoiDat, upemail)
+                    .Set(p => p.tenKhach, upname)
+                    .Set(p => p.coc, upcoc)
+                    .Set(p => p.ghiChu, upghichu)
+                    .Set(p => p.ngayDen, upNde)
+                    .Set(p => p.ngayDi, upNdi)
+                    .Set(p => p.loaiPhong, uploaiphong)
+                    .Set(p => p.maGia, upmagia)
+                    .Set(p => p.hinhThucThanhToan, upptth)
+                    .Set(p => p.nguon, upnguon)
+                    .Set(p => p.loaiBooking, uploaiBooking)
+                    .Set(p => p.congty, upcongty);
 
-            //    string loaiphong = comboBox5.SelectedItem?.ToString();
-            //    if (string.IsNullOrEmpty(loaiphong))
-            //    {
-            //        MessageBox.Show("Vui lòng chọn loại phòng!");
-            //        return;
-            //    }
+                var result = Paymentcollection.UpdateOne(
+                    filter,
+                    update,
+                    new UpdateOptions { IsUpsert = true } // insert nếu chưa có
+                );
 
-            //    string congty = comboBox3.SelectedItem?.ToString();
-            //    if (string.IsNullOrEmpty(congty))
-            //    {
-            //        MessageBox.Show("Vui lòng chọn công ty hoặc đại lý du lịch!");
-            //        return;
-            //    }
-            //    newBooking upBX = new newBooking()
-            //    {
-            //        code = code,
-            //        ngayDen = Ngayden,
-            //        ngayDi = Ngaydi,
-            //        soNguoiLon = Convert.ToInt32(Nguoilon),
-            //        soTreEm = Convert.ToInt32(Treem),
-            //        soDem = sodem,
-            //        giaPhong = gia,
-            //        hinhThucThanhToan = phuogthucthanhtoan,
-            //        ghiChu = ghichu,
-            //        loaiBooking = typephong,
-            //        soluong = soluongphong,
-            //        nguon = nguon,
-            //        loaiPhong = loaiphong,
-            //        maGia = magia,
-            //        congty = congty,
-            //        datBoi = nguoidat,
-            //        soDienThoaiNguoiDat = sodienthoainguoidat,
-            //        emailNguoiDat = emailnguoidat,
-            //        coc = coc
-
-            //    };
-            //    //newBookingCollection.InsertOne(newBX); // updat
-
-            //    newBookingCollection.UpdateOne(u => u.code == code , upBX);
-            //    MessageBox.Show("Sửa booking thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Lỗi khi sửa booking: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
+                if (result.MatchedCount > 0)
+                {
+                    MessageBox.Show("Cập nhật thanh toán thành công!");
+                }
+                else if (result.UpsertedId != null)
+                {
+                    MessageBox.Show("Bản ghi mới đã được tạo!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật Payment: " + ex.Message);
+            }
 
         }
 

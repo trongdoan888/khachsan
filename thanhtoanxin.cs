@@ -21,7 +21,7 @@ namespace khachsan
         private float TienCoc;
         private string nameKhach;
         private string nameRoom;
-        public Form1(string maphong, float totalMoney, float coc, string datboi,string code)
+        public Form1(string maphong, float totalMoney, float coc, string datboi, string code)
         {
             codeBooking = code;
             TotalMoney = totalMoney;
@@ -30,7 +30,7 @@ namespace khachsan
             nameRoom = maphong;
             InitializeComponent();
         }
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -44,9 +44,9 @@ namespace khachsan
                 var PayUser = Paymentcollection.Find(u => u.code == codeBooking).FirstOrDefault();
                 if (PayUser != null)
                 {
-               
+
                     comboBox1.SelectedIndex = 1;
-              
+
                     textBox6.Text = PayUser.tenNguoiTra;
                     textBox5.Text = PayUser.maPhong;
                     textBox1.Text = PayUser.thanhTien.ToString();
@@ -68,7 +68,7 @@ namespace khachsan
             {
 
             }
-         
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace khachsan
             double upcoc = textBox2.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox2.Text.Trim().ToString()) : 0;
             string upname = textBox6.Text.Trim().ToString();
             try
-            {   
+            {
                 var db = DatabaseMain.GetDatabase();
                 var Paymentcollection = db.GetCollection<Payment>("Payment");
                 var filter = Builders<Payment>.Filter.Eq(p => p.code, codeBooking);
@@ -109,7 +109,7 @@ namespace khachsan
             }
         }
 
-       
+
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -153,6 +153,11 @@ namespace khachsan
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -167,6 +167,7 @@
             button2.TabIndex = 100;
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // textBox5
             // 

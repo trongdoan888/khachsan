@@ -1,6 +1,7 @@
 ﻿using khachsan.Database;
 using khachsan.Model;
 using MongoDB.Driver;
+using MongoDB.Bson.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 
 namespace khachsan
@@ -18,34 +19,41 @@ namespace khachsan
     public partial class thongtinkhach : Form
     {
         private string codeBooking;
-        private string nameRoom;
-        private string quoctich;
-        private string gioitinh;
-        private string congty;
-        public thongtinkhach(string code, string name)
+        private string namekhach;
+        private string Email;
+        private string Gioitinh;
+        private string Congty;
+        private string Quoctich;
+        private string Passport;
+        private string SoDienthoai;
+        private string Ghichu;
+        public thongtinkhach(string name,string email,string passport,string sdt,string code,string ghichu,string gioitinhIndex,string congtyIndex,string quoctichIndex)
         {
             codeBooking = code;
-            nameRoom = name;
+            namekhach = name;
+            Email = email;
+            SoDienthoai = sdt;
+            Gioitinh = gioitinhIndex;
+            Congty = congtyIndex;
+            Quoctich = quoctichIndex;
+            Passport = passport;
+            Ghichu = ghichu;
             InitializeComponent();
-        }
-
-        public thongtinkhach(DateTime ngaytim, string nameRoom)
-        {
-            this.nameRoom = nameRoom;
         }
 
         public thongtinkhach()
         {
+            InitializeComponent();
+            
         }
 
-        private void thongtinkhach_Load(object sender, EventArgs e)
+        private void thongtinkhach_Load_1(object sender, EventArgs e)
         {
             try
             {
                 var db = DatabaseMain.GetDatabase();
                 var Bookingcollection = db.GetCollection<newBooking>("newBooking");
                 var BookingUser = Bookingcollection.Find(u => u.code == codeBooking).FirstOrDefault();
-
                 if (BookingUser != null)
                 {
                     textBox1.Text = BookingUser.tenKhach;
@@ -53,32 +61,42 @@ namespace khachsan
                     textBox5.Text = BookingUser.passport;
                     textBox7.Text = BookingUser.soDienThoaiNguoiDat;
                     textBox11.Text = BookingUser.ghiChu;
-
+                    
                     comboBox1.SelectedIndex = GetQuocTichIndex(BookingUser.quocTich);
                     comboBox2.SelectedIndex = GetGT(BookingUser.gioiTinh);
                     comboBox3.SelectedIndex = GetCompAgentIndex(BookingUser.congty);
+
                 }
+
+                if (BookingUser == null)
+                {
+                    MessageBox.Show("Không tìm thấy booking với mã: " + codeBooking);
+                    return;
+                }
+                MessageBox.Show("Tìm thấy booking: " + BookingUser.tenKhach);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi tải thông tin Booking: " + ex.Message, "Lỗi");
             }
         }
+        
 
-        private int GetGT(string gioitinh)
+        private int GetGT(string gioiTinh)
         {
 
-            switch (gioitinh)
+            switch (gioiTinh)
             {
                 case "Nam": return 0;
                 case "Nữ": return 1;
                 default: return -1;
             }
         }
-        private int GetQuocTichIndex(string quoctich)
+        private int GetQuocTichIndex(string quocTich)
         {
 
-            switch (quoctich)
+            switch (quocTich)
             {
                 case "Việt Nam": return 0;
                 case "Trung Quốc": return 1;
@@ -88,10 +106,10 @@ namespace khachsan
             }
         }
 
-        private int GetCompAgentIndex(string Comp)
+        private int GetCompAgentIndex(string congty)
         {
 
-            switch (Comp)
+            switch (congty)
             {
                 case "Agoda": return 0;
                 case "Travelloca": return 1;
@@ -124,9 +142,49 @@ namespace khachsan
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem mã Booking đã được tải chưa
-            Close();
+            string upname = textBox1.Text;
+            string upemail = textBox3.Text;
+            string uppassport = textBox5.Text;
+            string upsdt = textBox7.Text;
+            string upghichu = textBox11.Text;
+            string upquoctich = comboBox1.SelectedItem?.ToString();
+            string upgioitinh = comboBox2.SelectedItem?.ToString();
+            string upcongty = comboBox3.SelectedItem?.ToString();
+            try
+            {
+                var db = DatabaseMain.GetDatabase();
+                var Paymentcollection = db.GetCollection<newBooking>("newBooking");
+                var filter = Builders<newBooking>.Filter.Eq(p => p.code, codeBooking);
 
+                var update = Builders<newBooking>.Update
+                    .Set(p => p.tenKhach, upname)
+                    .Set(p => p.emailNguoiDat, upemail)
+                    .Set(p => p.passport, uppassport)
+                    .Set(p => p.soDienThoaiNguoiDat, upsdt)
+                    .Set(p => p.ghiChu, upghichu)
+                    .Set(p => p.quocTich, upquoctich)
+                    .Set(p => p.gioiTinh, upgioitinh)
+                    .Set(p => p.congty, upcongty);
+
+                var result = Paymentcollection.UpdateOne(
+                    filter,
+                    update,
+                    new UpdateOptions { IsUpsert = true } // insert nếu chưa có
+                );
+
+                if (result.MatchedCount > 0)
+                {
+                    MessageBox.Show("Cập nhật thanh toán thành công!");
+                }
+                else if (result.UpsertedId != null)
+                {
+                    MessageBox.Show("Bản ghi mới đã được tạo!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật Payment: " + ex.Message);
+            }
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
@@ -147,12 +205,6 @@ namespace khachsan
         {
 
         }
-
-        private void thongtinkhach_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
