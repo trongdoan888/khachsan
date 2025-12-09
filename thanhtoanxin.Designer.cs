@@ -126,6 +126,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(242, 24);
             textBox3.TabIndex = 94;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label3
             // 
