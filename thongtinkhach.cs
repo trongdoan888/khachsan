@@ -73,7 +73,7 @@ namespace khachsan
                     MessageBox.Show("Không tìm thấy booking với mã: " + codeBooking);
                     return;
                 }
-                MessageBox.Show("Tìm thấy booking: " + BookingUser.tenKhach);
+               
 
             }
             catch (Exception ex)
@@ -180,6 +180,8 @@ namespace khachsan
                 {
                     MessageBox.Show("Bản ghi mới đã được tạo!");
                 }
+
+                Close();
             }
             catch (Exception ex)
             {
