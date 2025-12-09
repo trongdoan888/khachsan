@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace khachsan
@@ -265,9 +267,94 @@ namespace khachsan
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Close();
+            //    string code = textBox6.Text.Trim().ToString();
+            //    DateTime Ngayden = dateTimePicker1.Value;
+            //    DateTime Ngaydi = dateTimePicker2.Value;
+
+            //    string Nguoilon = tbAdults.Text.Trim().ToString();
+            //    string Treem = textBox4.Text.Trim().ToString();
+
+
+            //    double check = (int)(Ngaydi - Ngayden).TotalDays;
+            //    if (Ngayden >= Ngaydi && check != 0)
+            //    {
+            //        MessageBox.Show("Ngày đi phải lớn hơn ngày đến!", "Lỗi ngày tháng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
+
+            //    int sodem = (int)(Ngaydi - Ngayden).TotalDays;
+
+            //    double coc = textBox3.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox13.Text.Trim().ToString()) : 0;
+
+            //    double gia = textBox5.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox5.Text.Trim().ToString()) : 0;
+            //    string nguoidat = textBox7.Text.Trim().ToString();
+            //    string emailnguoidat = textBox9.Text.Trim().ToString();
+            //    string ghichu = textBox11.Text.Trim().ToString();
+            //    string sodienthoainguoidat = textBox8.Text.Trim().ToString();
+
+
+            //    //string phuogthucthanhtoan = comboBox3.SelectedItem?.ToString();
+            //    //if (string.IsNullOrEmpty(phuogthucthanhtoan))
+            //    //{
+            //    //    MessageBox.Show("Vui lòng chọn phương thức thanh toán!");
+            //    //    return;
+            //    //}
+
+            //    string nguon = comboBox4.SelectedItem?.ToString();
+            //    if (string.IsNullOrEmpty(nguon))
+            //    {
+            //        MessageBox.Show("Vui lòng chọn nguồn khách!");
+            //        return;
+            //    }
+
+            //    string loaiphong = comboBox5.SelectedItem?.ToString();
+            //    if (string.IsNullOrEmpty(loaiphong))
+            //    {
+            //        MessageBox.Show("Vui lòng chọn loại phòng!");
+            //        return;
+            //    }
+
+            //    string congty = comboBox3.SelectedItem?.ToString();
+            //    if (string.IsNullOrEmpty(congty))
+            //    {
+            //        MessageBox.Show("Vui lòng chọn công ty hoặc đại lý du lịch!");
+            //        return;
+            //    }
+            //    newBooking upBX = new newBooking()
+            //    {
+            //        code = code,
+            //        ngayDen = Ngayden,
+            //        ngayDi = Ngaydi,
+            //        soNguoiLon = Convert.ToInt32(Nguoilon),
+            //        soTreEm = Convert.ToInt32(Treem),
+            //        soDem = sodem,
+            //        giaPhong = gia,
+            //        hinhThucThanhToan = phuogthucthanhtoan,
+            //        ghiChu = ghichu,
+            //        loaiBooking = typephong,
+            //        soluong = soluongphong,
+            //        nguon = nguon,
+            //        loaiPhong = loaiphong,
+            //        maGia = magia,
+            //        congty = congty,
+            //        datBoi = nguoidat,
+            //        soDienThoaiNguoiDat = sodienthoainguoidat,
+            //        emailNguoiDat = emailnguoidat,
+            //        coc = coc
+
+            //    };
+            //    //newBookingCollection.InsertOne(newBX); // updat
+
+            //    newBookingCollection.UpdateOne(u => u.code == code , upBX);
+            //    MessageBox.Show("Sửa booking thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Lỗi khi sửa booking: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
         }
     }
 
 }
-

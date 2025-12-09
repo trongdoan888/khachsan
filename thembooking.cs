@@ -250,8 +250,9 @@ namespace khachsan
                     coc = coc
 
                 };
-                newBookingCollection.InsertOne(newBX);
+                newBookingCollection.InsertOne(newBX); // updat
 
+                newBookingCollection.UpdateOne(u => u.code == '123', newBX);
                 MessageBox.Show("Thêm booking thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
