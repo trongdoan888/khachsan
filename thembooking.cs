@@ -90,11 +90,12 @@ namespace khachsan
             string maPhong = textBox10.Text.Trim().ToString();
 
 
+
             DateTime Ngayden = dateTimePicker1.Value;
 
             DateTime Ngaydi = dateTimePicker2.Value;
 
-            double check =  (int)(Ngaydi - Ngayden).TotalDays;
+            double check = (int)(Ngaydi - Ngayden).TotalDays;
             if (Ngayden >= Ngaydi && check != 0)
             {
                 MessageBox.Show("Ngày đi phải lớn hơn ngày đến!", "Lỗi ngày tháng", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -147,6 +148,8 @@ namespace khachsan
                 string ghichu = textBox11.Text.Trim().ToString();
 
                 int soluongphong = textBox12.Text.Trim().ToString() != "" ? Convert.ToInt32(textBox6.Text.Trim().ToString()) : 0;
+
+                double coc = textBox13.Text.Trim().ToString() != "" ? Convert.ToDouble(textBox13.Text.Trim().ToString()) : 0;
 
                 string gioitinh = comboBox1.SelectedItem?.ToString();
 
@@ -243,7 +246,8 @@ namespace khachsan
                     soDienThoaiNguoiDat = sodienthoainguoidat,
                     emailNguoiDat = emailnguoidat,
                     passport = passport,
-                    maPhong = maPhong
+                    maPhong = maPhong,
+                    coc = coc
 
                 };
                 newBookingCollection.InsertOne(newBX);
@@ -333,6 +337,23 @@ namespace khachsan
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox13_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Close();
+           
+            }
+            catch
+            {
+            }
         }
     }
 }

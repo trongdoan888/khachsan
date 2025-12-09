@@ -12,19 +12,10 @@ namespace khachsan.Model
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string maBooking { get; set; }
-        public int stt { get; set; }
-        public string taiKhoan { get; set; }
-        public string moTa { get; set; }
-        public string donVi { get; set; }
-        public double donGia { get; set; }
-        public int soLuong { get; set; }
-        public double vat { get; set; }
+        public string code { get; set; }
         public double thanhTien { get; set; }
-        public double soTienPhaiTra { get; set; }
         public double soTienDaTra { get; set; }
         public double soTienConLai { get; set; }
-        public double giamGia { get; set; }
-        public string TaiKoanThu { get; set; }
+        public string tenNguoiTra { get; set; }
     }
 }

@@ -36,5 +36,6 @@ namespace khachsan.Model
         public string loaiPhong { get; set; }
         public int soluong { get; set; }
         public string passport { get; set; }
+        public double coc { get; set; }
     }
 }

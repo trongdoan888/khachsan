@@ -38,6 +38,7 @@ namespace khachsan
             InitializeComponent();
         }
 
+
         // --- CÁC HÀM XỬ LÝ SỰ KIỆN KHÁC (GIỮ NGUYÊN) ---
 
         private void xemBooking_Load(object sender, EventArgs e)
@@ -59,6 +60,7 @@ namespace khachsan
 
                     dateTimePicker1.Value = BookingUser.ngayDen;
                     dateTimePicker2.Value = BookingUser.ngayDi;
+                    textBox1.Text = BookingUser.maPhong; // so phong
                     textBox2.Text = BookingUser.soDem.ToString(); // Night
                     tbAdults.Text = BookingUser.soNguoiLon.ToString(); // adult
                     textBox4.Text = BookingUser.soTreEm.ToString(); // children
@@ -68,6 +70,7 @@ namespace khachsan
                     textBox9.Text = BookingUser.emailNguoiDat; // email
                     textBox8.Text = BookingUser.soDienThoaiNguoiDat; // tel
                     textBox7.Text = BookingUser.datBoi; // by
+                    textBox3.Text = BookingUser.coc.ToString();
 
                     // Logic kiểm tra trạng thái Booking
                     if (BookingUser.code != null)
@@ -86,24 +89,23 @@ namespace khachsan
             }
         }
 
-        // --- HÀM XỬ LÝ NÚT MỞ FORM THÔNG TIN KHÁCH  ---
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //    // Gọi Form thongtinkhach và truyền mã code Booking qua Constructor
-            //    thongtinkhach frmKhach = new thongtinkhach(codeBooking);
-            //    frmKhach.ShowDialog();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi khi mở Form Thông tin Khách: " + ex.Message, "Lỗi");
-            //}
+            try
+            {
+                this.Hide();
+                thongtinkhach main = new thongtinkhach();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi mở thông tin khách: " + ex.Message, "Lỗi");
+            }
+
+
         }
-
-        // --- CÁC HÀM GET INDEX (GIỮ NGUYÊN) ---
-
         private int GetRoomType(string nameRoom) // room type
         {
             switch (nameRoom)
@@ -234,12 +236,36 @@ namespace khachsan
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Hide();
+                Form1 main = new Form1();
+                main.ShowDialog();
+                this.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi mở thanh toán: " + ex.Message, "Lỗi");
+            }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label20_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 

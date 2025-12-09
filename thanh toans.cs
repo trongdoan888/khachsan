@@ -38,7 +38,7 @@ namespace khachsan
         {
             DateTime Ngaytim = dateTimePicker1.Value;
             string nameRoom = button2.Text;
-     
+
             try
             {
                 var db = DatabaseMain.GetDatabase();
@@ -50,9 +50,9 @@ namespace khachsan
                     return;
                 }
 
-                    DateTime ngayDi = room.ngayDi.ToLocalTime();
-                    DateTime ngayDen = room.ngayDen.ToLocalTime();
-                    if ((ngayDen <= Ngaytim && Ngaytim <= ngayDi))
+                DateTime ngayDi = room.ngayDi.ToLocalTime();
+                DateTime ngayDen = room.ngayDen.ToLocalTime();
+                if ((ngayDen <= Ngaytim && Ngaytim <= ngayDi))
                 {
                     MessageBox.Show("Tìm thấy booking cho phòng: " + nameRoom + " vào ngày: " + Ngaytim.ToShortDateString());
                     string coden = room.code;
@@ -72,22 +72,22 @@ namespace khachsan
             }
 
         }
-       
+
 
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace khachsan
 
         private void button8_Click(object sender, EventArgs e)// log out 
         {
-
+            Close();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -117,7 +117,16 @@ namespace khachsan
 
         private void button12_Click(object sender, EventArgs e) // new account
         {
-    
+            try
+            {
+                this.Hide();
+                CreatUser main = new CreatUser();
+                main.ShowDialog();
+            }
+            catch
+            {
+
+            }
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -130,6 +139,9 @@ namespace khachsan
 
         }
 
-   
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 }
